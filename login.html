@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Identifícate en DreamsDeveloper - Tu Programador De Confianza">
+    <title>Identifícate | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-side">
+            <a href="index.html" class="auth-brand">
+                <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                <span>DreamsDeveloper</span>
+            </a>
+            <h2>Bienvenido de vuelta</h2>
+            <p>Accede a tu panel para gestionar tus proyectos y estar en contacto directo.</p>
+        </div>
+        <div class="auth-main">
+            <div class="auth-card">
+                <h1 class="auth-title">Identifícate</h1>
+                <p class="auth-subtitle">Ingresa tus datos para acceder</p>
+                <form class="auth-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember"> Recordarme
+                        </label>
+                        <a href="#" class="form-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                </form>
+                <div class="auth-separator">
+                    <span>o</span>
+                </div>
+                <p class="auth-switch">¿No tienes cuenta? <a href="register.html">Trabaja Conmigo</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

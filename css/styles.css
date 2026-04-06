@@ -93,6 +93,28 @@ header {
     color: var(--color-accent);
 }
 
+.nav-auth {
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.85rem;
+}
+
+.nav-auth:hover {
+    border-color: var(--color-accent);
+}
+
+.nav-auth-accent {
+    background-color: var(--color-primary);
+    color: var(--color-white) !important;
+    border-color: var(--color-primary);
+}
+
+.nav-auth-accent:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
 .nav-toggle {
     display: none;
     background: none;
