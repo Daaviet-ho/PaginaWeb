@@ -85,16 +85,6 @@ header p {
     margin-bottom: 10px;
 }
 
-.sector-porcentaje {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 8px;
-}
-
 .sector-emocion {
     font-size: 0.95rem;
     opacity: 0.7;
