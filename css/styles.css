@@ -43,3 +43,60 @@ header p {
     font-size: 1rem;
     opacity: 0.8;
 }
+
+/* Sección Sectores */
+.sectores {
+    padding: 60px 20px;
+    background-color: #0f0f1a;
+    color: #fff;
+}
+
+.sectores h2 {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+}
+
+.sectores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sector-card {
+    background-color: #1a1a2e;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.sector-card:hover {
+    transform: translateY(-4px);
+}
+
+.sector-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.sector-porcentaje {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.sector-emocion {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-top: 6px;
+}
