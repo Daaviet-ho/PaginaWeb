@@ -1,3 +1,38 @@
+// Texto rotatorio mágico
+const rotatingPhrases = [
+    'De Hecho, Muy Facil',
+    'De Hecho, Muy Barato',
+    'De Hecho, Con o sin Contrato',
+    'De Hecho, Con Planes Incluidos',
+    'De Hecho, Podremos Hacer Negocios Juntos'
+];
+
+let currentPhrase = 0;
+const rotatingEl = document.querySelector('.rotating-text');
+
+function rotateText() {
+    rotatingEl.classList.add('exit');
+
+    setTimeout(() => {
+        currentPhrase = (currentPhrase + 1) % rotatingPhrases.length;
+        rotatingEl.textContent = rotatingPhrases[currentPhrase];
+        rotatingEl.classList.remove('exit');
+        rotatingEl.classList.add('enter');
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                rotatingEl.classList.add('show');
+            });
+        });
+
+        setTimeout(() => {
+            rotatingEl.classList.remove('enter', 'show');
+        }, 500);
+    }, 400);
+}
+
+setInterval(rotateText, 3000);
+
 // Menú móvil
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
