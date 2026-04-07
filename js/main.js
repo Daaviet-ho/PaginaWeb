@@ -73,4 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
+
+    // Desplegable justificación legal
+    const btnJustificacion = document.getElementById('btnJustificacion');
+    const justificacionContent = document.getElementById('justificacionContent');
+    if (btnJustificacion && justificacionContent) {
+        btnJustificacion.addEventListener('click', () => {
+            btnJustificacion.classList.toggle('active');
+            justificacionContent.classList.toggle('open');
+        });
+    }
 });
