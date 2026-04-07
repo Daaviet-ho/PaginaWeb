@@ -94,6 +94,26 @@
     z-index: 1;
 }
 
+.sector-btn-icon i {
+    font-size: inherit;
+}
+
+/* Icon colors per sector */
+.sector-turismo .sector-btn-icon { color: #00bfff; }
+.sector-restauracion .sector-btn-icon { color: #ff5733; }
+.sector-comercio .sector-btn-icon { color: #c39bd3; }
+.sector-transporte .sector-btn-icon { color: #5dade2; }
+.sector-construccion .sector-btn-icon { color: #7d6608; }
+.sector-profesionales .sector-btn-icon { color: #a0b0c0; }
+.sector-tecnologia .sector-btn-icon { color: #2ecc71; }
+.sector-musica .sector-btn-icon { color: #ff00ff; }
+.sector-bienestar .sector-btn-icon { color: #48c9b0; }
+.sector-agricultura .sector-btn-icon { color: #2ecc71; }
+.sector-salud .sector-btn-icon { color: #85c1e9; }
+.sector-educacion .sector-btn-icon { color: #f4d03f; }
+.sector-personales .sector-btn-icon { color: #f5b7b1; }
+.sector-logistica .sector-btn-icon { color: #b0b8b8; }
+
 .sector-btn-name {
     font-family: var(--font-heading);
     font-size: 1rem;
@@ -147,10 +167,6 @@
 
     .sector-btn-name {
         font-size: 0.85rem;
-    }
-
-    .detail-title {
-        font-size: 1.3rem;
     }
 }
 

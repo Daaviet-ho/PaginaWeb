@@ -59,6 +59,18 @@ header {
     gap: 12px;
 }
 
+.header-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-active {
+    color: var(--color-accent) !important;
+}
+
 .header-left img {
     width: 45px;
     height: 45px;
@@ -201,7 +213,9 @@ header {
 
 /* ===== Botones ===== */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 28px;
     border-radius: 50px;
     font-size: 0.95rem;
@@ -211,6 +225,10 @@ header {
     cursor: pointer;
     border: none;
     font-family: var(--font-body);
+}
+
+.btn i {
+    font-size: 1.1em;
 }
 
 .btn-primary {
@@ -307,6 +325,12 @@ header {
 .servicio-icon {
     font-size: 2.5rem;
     margin-bottom: 16px;
+    color: var(--color-accent);
+}
+
+.servicio-icon i {
+    font-size: inherit;
+    color: inherit;
 }
 
 .servicio-card h3 {

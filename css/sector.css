@@ -54,6 +54,12 @@
     display: block;
     font-size: 3.5rem;
     margin-bottom: 16px;
+    color: var(--sector-color, var(--color-accent));
+}
+
+.sector-hero-icon i {
+    font-size: inherit;
+    color: inherit;
 }
 
 .sector-hero h2 {
@@ -152,6 +158,12 @@
 .sector-service-card .service-icon {
     font-size: 1.8rem;
     margin-bottom: 12px;
+    color: var(--sector-color, var(--color-accent));
+}
+
+.sector-service-card .service-icon i {
+    font-size: inherit;
+    color: inherit;
 }
 
 .sector-service-card h4 {
