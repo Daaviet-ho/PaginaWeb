@@ -35,6 +35,346 @@
 }
 
 /* ===== Servicios Page ===== */
+
+/* Dato Destacado */
+.dato-destacado {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--color-bg-card);
+    padding: 24px 32px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--color-accent);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dato-destacado > i {
+    font-size: 2rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.dato-destacado p {
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.dato-destacado strong {
+    color: var(--color-white);
+}
+
+/* Vigilancia Section */
+.servicio-vigilancia {
+    padding: 60px 20px;
+    background-color: var(--color-bg-dark);
+}
+
+.vigilancia-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.vigilancia-icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: 16px;
+}
+
+.vigilancia-icon i {
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+.vigilancia-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.vigilancia-intro {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.vigilancia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.vigilancia-card {
+    background-color: var(--color-bg-card);
+    padding: 32px 28px;
+    border-radius: var(--radius);
+    border-top: 3px solid var(--color-accent);
+    transition: transform var(--transition);
+}
+
+.vigilancia-card:hover {
+    transform: translateY(-4px);
+}
+
+.vigilancia-card-icon {
+    margin-bottom: 14px;
+}
+
+.vigilancia-card-icon i {
+    font-size: 1.6rem;
+    color: var(--color-accent);
+}
+
+.vigilancia-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.vigilancia-card > p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+}
+
+.vigilancia-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vigilancia-features li {
+    color: var(--color-text);
+    font-size: 0.88rem;
+    padding: 6px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.vigilancia-features li i {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Avisos */
+.vigilancia-aviso,
+.vigilancia-plus {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+}
+
+.vigilancia-aviso {
+    background-color: rgba(108, 92, 231, 0.08);
+    border-left: 4px solid var(--color-primary);
+}
+
+.vigilancia-plus {
+    background-color: rgba(0, 206, 201, 0.06);
+    border-left: 4px solid var(--color-accent);
+}
+
+.aviso-icon i {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+.vigilancia-aviso .aviso-icon i {
+    color: var(--color-primary);
+}
+
+.vigilancia-aviso h4,
+.vigilancia-plus h4 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-white);
+    margin-bottom: 6px;
+}
+
+.vigilancia-aviso p,
+.vigilancia-plus p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Desglose */
+.desglose-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 48px 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.desglose-title i {
+    color: var(--color-accent);
+    font-size: 1.4rem;
+}
+
+.desglose-item {
+    background-color: var(--color-bg-card);
+    padding: 28px 24px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    border-left: 4px solid var(--color-bg-card);
+    transition: border-color var(--transition);
+}
+
+.desglose-item:hover {
+    border-left-color: var(--color-accent);
+}
+
+.desglose-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.desglose-header i {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+}
+
+.desglose-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.desglose-desc {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.desglose-precio-unico {
+    color: var(--color-text);
+    font-size: 1.05rem;
+}
+
+.desglose-precio-unico strong {
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.desglose-precios {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.precio-tag {
+    background-color: rgba(0, 206, 201, 0.08);
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    min-width: 140px;
+}
+
+.precio-tag-custom {
+    background-color: rgba(108, 92, 231, 0.08);
+}
+
+.precio-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.precio-valor {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.precio-tag-custom .precio-valor {
+    color: var(--color-primary);
+}
+
+.precio-sep {
+    color: var(--color-text-muted);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Versiones Zorro Policía */
+.policia-versiones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.version-card {
+    background-color: rgba(0, 206, 201, 0.04);
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.version-card h5 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-white);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.version-card h5 i {
+    color: var(--color-accent);
+}
+
+.version-card p {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.version-precio {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+/* Services Main (Otros Servicios) */
 .services-main {
     padding: 60px 20px;
     background-color: var(--color-bg-dark);
@@ -564,5 +904,33 @@
 
     .datos-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vigilancia-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .vigilancia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .policia-versiones {
+        grid-template-columns: 1fr;
+    }
+
+    .desglose-precios {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .precio-sep {
+        text-align: center;
+    }
+
+    .dato-destacado {
+        flex-direction: column;
+        text-align: center;
     }
 }
