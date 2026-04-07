@@ -1,0 +1,185 @@
+/* ===== Ejemplos Page ===== */
+
+.header-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-active {
+    color: var(--color-accent) !important;
+}
+
+/* Hero */
+.ejemplos-hero {
+    padding: 80px 20px 50px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-section) 100%);
+}
+
+.ejemplos-hero h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 12px;
+}
+
+.ejemplos-hero p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Sectores como botones */
+.ejemplos-sectores {
+    padding: 50px 20px 60px;
+    background-color: var(--color-bg-dark);
+}
+
+.sectores-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.sector-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 16px;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius);
+    border-left: 4px solid;
+    text-decoration: none;
+    color: var(--color-white);
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+    cursor: pointer;
+}
+
+.sector-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.sector-btn-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.sector-btn-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.sector-btn-emocion {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+/* Colores de borde por sector */
+.sector-btn.sector-turismo { border-color: #00bfff; }
+.sector-btn.sector-restauracion { border-color: #ff5733; }
+.sector-btn.sector-comercio { border-color: #c39bd3; }
+.sector-btn.sector-transporte { border-color: #5dade2; }
+.sector-btn.sector-construccion { border-color: #7d6608; }
+.sector-btn.sector-profesionales { border-color: #34495e; }
+.sector-btn.sector-tecnologia { border-color: #2ecc71; }
+.sector-btn.sector-musica { border-color: #ff00ff; }
+.sector-btn.sector-bienestar { border-color: #48c9b0; }
+.sector-btn.sector-agricultura { border-color: #196f3d; }
+.sector-btn.sector-salud { border-color: #85c1e9; }
+.sector-btn.sector-educacion { border-color: #f4d03f; }
+.sector-btn.sector-personales { border-color: #f5b7b1; }
+.sector-btn.sector-logistica { border-color: #7f8c8d; }
+
+/* Sector detail sections */
+.sector-detail {
+    padding: 50px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.sector-detail:nth-child(even) {
+    background-color: var(--color-bg-section);
+}
+
+.sector-detail:nth-child(odd) {
+    background-color: var(--color-bg-dark);
+}
+
+.detail-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.detail-desc {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.detail-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.detail-examples span {
+    background-color: var(--color-bg-card);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.detail-examples span:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ejemplos-hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .sectores-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .sector-btn {
+        padding: 20px 12px;
+    }
+
+    .sector-btn-icon {
+        font-size: 1.6rem;
+    }
+
+    .sector-btn-name {
+        font-size: 0.85rem;
+    }
+
+    .detail-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectores-buttons {
+        grid-template-columns: 1fr;
+    }
+}

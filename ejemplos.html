@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplos de trabajo por sector - DreamsDeveloper">
+    <title>Ejemplos | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ejemplos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-link">
+                <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                <div class="header-text">
+                    <h1>DreamsDeveloper</h1>
+                    <p>Tu Programador De Confianza</p>
+                </div>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="ejemplos.html" class="nav-active">Ejemplos</a>
+            <a href="index.html#portfolio">Proyectos</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="login.html" class="nav-auth">Identifícate</a>
+            <a href="register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+    </header>
+
+    <main>
+        <!-- Hero de ejemplos -->
+        <section class="ejemplos-hero">
+            <h2>Elige un sector</h2>
+            <p>Selecciona el sector que te interesa y descubre lo que puedo hacer por tu negocio</p>
+        </section>
+
+        <!-- Grid de sectores como botones -->
+        <section class="ejemplos-sectores">
+            <div class="container">
+                <div class="sectores-buttons">
+                    <a href="#turismo" class="sector-btn sector-turismo">
+                        <span class="sector-btn-icon">&#9992;</span>
+                        <span class="sector-btn-name">Turismo y ocio</span>
+                        <span class="sector-btn-emocion">Evasión y libertad</span>
+                    </a>
+                    <a href="#restauracion" class="sector-btn sector-restauracion">
+                        <span class="sector-btn-icon">&#127860;</span>
+                        <span class="sector-btn-name">Restauración</span>
+                        <span class="sector-btn-emocion">Placer y disfrute</span>
+                    </a>
+                    <a href="#comercio" class="sector-btn sector-comercio">
+                        <span class="sector-btn-icon">&#128722;</span>
+                        <span class="sector-btn-name">Comercio (retail)</span>
+                        <span class="sector-btn-emocion">Deseo y estatus</span>
+                    </a>
+                    <a href="#transporte" class="sector-btn sector-transporte">
+                        <span class="sector-btn-icon">&#128663;</span>
+                        <span class="sector-btn-name">Transporte y movilidad</span>
+                        <span class="sector-btn-emocion">Comodidad y autonomía</span>
+                    </a>
+                    <a href="#construccion" class="sector-btn sector-construccion">
+                        <span class="sector-btn-icon">&#127960;</span>
+                        <span class="sector-btn-name">Construcción e inmobiliaria</span>
+                        <span class="sector-btn-emocion">Seguridad y exclusividad</span>
+                    </a>
+                    <a href="#profesionales" class="sector-btn sector-profesionales">
+                        <span class="sector-btn-icon">&#128188;</span>
+                        <span class="sector-btn-name">Servicios profesionales</span>
+                        <span class="sector-btn-emocion">Tranquilidad y control</span>
+                    </a>
+                    <a href="#tecnologia" class="sector-btn sector-tecnologia">
+                        <span class="sector-btn-icon">&#128187;</span>
+                        <span class="sector-btn-name">Tecnología y marketing</span>
+                        <span class="sector-btn-emocion">Visibilidad y crecimiento</span>
+                    </a>
+                    <a href="#musica" class="sector-btn sector-musica">
+                        <span class="sector-btn-icon">&#127925;</span>
+                        <span class="sector-btn-name">Industria musical y entretenimiento</span>
+                        <span class="sector-btn-emocion">Euforia y conexión</span>
+                    </a>
+                    <a href="#bienestar" class="sector-btn sector-bienestar">
+                        <span class="sector-btn-icon">&#128588;</span>
+                        <span class="sector-btn-name">Bienestar y lifestyle</span>
+                        <span class="sector-btn-emocion">Equilibrio y paz interior</span>
+                    </a>
+                    <a href="#agricultura" class="sector-btn sector-agricultura">
+                        <span class="sector-btn-icon">&#127793;</span>
+                        <span class="sector-btn-name">Agricultura y productos locales</span>
+                        <span class="sector-btn-emocion">Autenticidad y conexión con lo natural</span>
+                    </a>
+                    <a href="#salud" class="sector-btn sector-salud">
+                        <span class="sector-btn-icon">&#128138;</span>
+                        <span class="sector-btn-name">Salud</span>
+                        <span class="sector-btn-emocion">Seguridad y bienestar físico</span>
+                    </a>
+                    <a href="#educacion" class="sector-btn sector-educacion">
+                        <span class="sector-btn-icon">&#127891;</span>
+                        <span class="sector-btn-name">Educación</span>
+                        <span class="sector-btn-emocion">Progreso y futuro</span>
+                    </a>
+                    <a href="#personales" class="sector-btn sector-personales">
+                        <span class="sector-btn-icon">&#9996;</span>
+                        <span class="sector-btn-name">Servicios personales</span>
+                        <span class="sector-btn-emocion">Comodidad y cuidado personal</span>
+                    </a>
+                    <a href="#logistica" class="sector-btn sector-logistica">
+                        <span class="sector-btn-icon">&#128230;</span>
+                        <span class="sector-btn-name">Industria y logística</span>
+                        <span class="sector-btn-emocion">Estabilidad y abastecimiento</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalle de cada sector -->
+        <section class="sector-detail" id="turismo">
+            <div class="container">
+                <h3 class="detail-title" style="color: #00bfff;">&#9992; Turismo y ocio</h3>
+                <p class="detail-desc">Plataformas de reservas, apps de rutas turísticas, webs de hoteles y experiencias, sistemas de gestión para agencias de viaje.</p>
+                <div class="detail-examples">
+                    <span>Booking de actividades</span>
+                    <span>Web de hotel</span>
+                    <span>App de rutas</span>
+                    <span>Panel de reservas</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="restauracion">
+            <div class="container">
+                <h3 class="detail-title" style="color: #ff5733;">&#127860; Restauración</h3>
+                <p class="detail-desc">Apps de delivery, sistemas de pedidos online, cartas digitales interactivas, webs de restaurantes con reservas integradas.</p>
+                <div class="detail-examples">
+                    <span>App de pedidos</span>
+                    <span>Carta digital QR</span>
+                    <span>Web de restaurante</span>
+                    <span>Sistema de delivery</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="comercio">
+            <div class="container">
+                <h3 class="detail-title" style="color: #c39bd3;">&#128722; Comercio (retail)</h3>
+                <p class="detail-desc">E-commerce completos, catálogos digitales, sistemas de inventario, apps de fidelización de clientes.</p>
+                <div class="detail-examples">
+                    <span>Tienda online</span>
+                    <span>Catálogo digital</span>
+                    <span>Gestión de inventario</span>
+                    <span>App de fidelización</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="transporte">
+            <div class="container">
+                <h3 class="detail-title" style="color: #5dade2;">&#128663; Transporte y movilidad</h3>
+                <p class="detail-desc">Apps de seguimiento GPS, plataformas de reserva de vehículos, dashboards de flotas, webs de servicios de transporte.</p>
+                <div class="detail-examples">
+                    <span>Seguimiento GPS</span>
+                    <span>Reserva de vehículos</span>
+                    <span>Dashboard de flota</span>
+                    <span>Web de transporte</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="construccion">
+            <div class="container">
+                <h3 class="detail-title" style="color: #7d6608;">&#127960; Construcción e inmobiliaria</h3>
+                <p class="detail-desc">Portales inmobiliarios, catálogos de propiedades, sistemas de gestión de obra, webs corporativas con tours virtuales.</p>
+                <div class="detail-examples">
+                    <span>Portal inmobiliario</span>
+                    <span>Tour virtual 360°</span>
+                    <span>Gestión de obra</span>
+                    <span>Catálogo de propiedades</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="profesionales">
+            <div class="container">
+                <h3 class="detail-title" style="color: #a0b0c0;">&#128188; Servicios profesionales</h3>
+                <p class="detail-desc">Webs corporativas, paneles de gestión de clientes, sistemas de citas, dashboards de productividad.</p>
+                <div class="detail-examples">
+                    <span>Web corporativa</span>
+                    <span>CRM básico</span>
+                    <span>Sistema de citas</span>
+                    <span>Dashboard KPIs</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="tecnologia">
+            <div class="container">
+                <h3 class="detail-title" style="color: #2ecc71;">&#128187; Tecnología y marketing</h3>
+                <p class="detail-desc">Landing pages de conversión, dashboards de analítica, tools de automatización, webs SaaS.</p>
+                <div class="detail-examples">
+                    <span>Landing de conversión</span>
+                    <span>Dashboard analítica</span>
+                    <span>Herramienta SaaS</span>
+                    <span>Automatización</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="musica">
+            <div class="container">
+                <h3 class="detail-title" style="color: #ff00ff;">&#127925; Industria musical y entretenimiento</h3>
+                <p class="detail-desc">Webs de artistas, plataformas de streaming, apps de venta de entradas, portfolios visuales interactivos.</p>
+                <div class="detail-examples">
+                    <span>Web de artista</span>
+                    <span>Venta de entradas</span>
+                    <span>Plataforma streaming</span>
+                    <span>Portfolio interactivo</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="bienestar">
+            <div class="container">
+                <h3 class="detail-title" style="color: #48c9b0;">&#128588; Bienestar y lifestyle</h3>
+                <p class="detail-desc">Webs de centros wellness, apps de meditación, sistemas de reserva para spas, plataformas de coaching.</p>
+                <div class="detail-examples">
+                    <span>Web de wellness</span>
+                    <span>App de meditación</span>
+                    <span>Reserva de spa</span>
+                    <span>Plataforma coaching</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="agricultura">
+            <div class="container">
+                <h3 class="detail-title" style="color: #2ecc71;">&#127793; Agricultura y productos locales</h3>
+                <p class="detail-desc">Tiendas de productos locales, apps de trazabilidad, webs de cooperativas, sistemas de venta directa.</p>
+                <div class="detail-examples">
+                    <span>Tienda km 0</span>
+                    <span>Trazabilidad</span>
+                    <span>Web cooperativa</span>
+                    <span>Venta directa</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="salud">
+            <div class="container">
+                <h3 class="detail-title" style="color: #85c1e9;">&#128138; Salud</h3>
+                <p class="detail-desc">Portales de pacientes, sistemas de citas médicas, apps de seguimiento de salud, webs de clínicas.</p>
+                <div class="detail-examples">
+                    <span>Portal de pacientes</span>
+                    <span>Citas médicas</span>
+                    <span>App de salud</span>
+                    <span>Web de clínica</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="educacion">
+            <div class="container">
+                <h3 class="detail-title" style="color: #f4d03f;">&#127891; Educación</h3>
+                <p class="detail-desc">Plataformas e-learning, aulas virtuales, sistemas de gestión escolar, apps educativas interactivas.</p>
+                <div class="detail-examples">
+                    <span>Plataforma e-learning</span>
+                    <span>Aula virtual</span>
+                    <span>Gestión escolar</span>
+                    <span>App educativa</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="personales">
+            <div class="container">
+                <h3 class="detail-title" style="color: #f5b7b1;">&#9996; Servicios personales</h3>
+                <p class="detail-desc">Webs de profesionales independientes, sistemas de reservas, portfolios personales, apps de agenda.</p>
+                <div class="detail-examples">
+                    <span>Web personal</span>
+                    <span>Reserva de citas</span>
+                    <span>Portfolio</span>
+                    <span>App de agenda</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-detail" id="logistica">
+            <div class="container">
+                <h3 class="detail-title" style="color: #b0b8b8;">&#128230; Industria y logística</h3>
+                <p class="detail-desc">Dashboards de operaciones, sistemas de tracking de envíos, webs de empresas industriales, apps de gestión de almacén.</p>
+                <div class="detail-examples">
+                    <span>Dashboard operaciones</span>
+                    <span>Tracking envíos</span>
+                    <span>Web industrial</span>
+                    <span>Gestión almacén</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <h2>¿Tu sector está aquí?</h2>
+                <p>Cuéntame tu idea y la hacemos realidad juntos.</p>
+                <a href="index.html#contacto" class="btn btn-primary btn-large">Contactar</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                    <span>DreamsDeveloper</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="ejemplos.html">Ejemplos</a>
+                    <a href="index.html#portfolio">Proyectos</a>
+                    <a href="index.html#contacto">Contacto</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
