@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header / Navegación -->
@@ -33,10 +34,11 @@
             </div>
         </div>
         <nav class="nav-menu" id="navMenu">
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
+            <a href="index.html" class="nav-active">Home</a>
+            <a href="servicios.html">Servicios</a>
             <a href="ejemplos.html">Ejemplos</a>
-            <a href="#portfolio">Proyectos</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="planes.html">Planes</a>
             <a href="#contacto">Contacto</a>
             <a href="login.html" class="nav-auth">Identifícate</a>
             <a href="register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
@@ -51,8 +53,8 @@
                 <h2 class="hero-title">Puedo Programar Tus Ideas En Codigo Super Facil <span class="rotating-text accent">De Hecho, Muy Facil</span></h2>
                 <p class="hero-subtitle">Transformo ideas en productos digitales funcionales, modernos y adaptados a cada sector. Desde la primera línea de código hasta el lanzamiento.</p>
                 <div class="hero-buttons">
-                    <a href="ejemplos.html" class="btn btn-primary">Ver Ejemplos</a>
-                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                    <a href="ejemplos.html" class="btn btn-primary"><i class="ri-apps-line"></i> Ver Ejemplos</a>
+                    <a href="#contacto" class="btn btn-secondary"><i class="ri-mail-line"></i> Contactar</a>
                 </div>
             </div>
         </section>
@@ -68,65 +70,35 @@
             </div>
         </section>
 
-        <!-- Servicios -->
+        <!-- Servicios resumen -->
         <section class="servicios" id="servicios">
             <div class="container">
-                <h2 class="section-title">Servicios</h2>
+                <h2 class="section-title">Lo que hago</h2>
+                <p class="section-subtitle">Soluciones digitales completas para tu negocio</p>
                 <div class="servicios-grid">
                     <div class="servicio-card">
-                        <div class="servicio-icon">&#128187;</div>
+                        <div class="servicio-icon"><i class="ri-global-line"></i></div>
                         <h3>Páginas Web</h3>
                         <p>Sitios web modernos, rápidos y responsive. Desde landing pages hasta plataformas completas.</p>
                     </div>
                     <div class="servicio-card">
-                        <div class="servicio-icon">&#128241;</div>
+                        <div class="servicio-icon"><i class="ri-smartphone-line"></i></div>
                         <h3>Aplicaciones</h3>
                         <p>Apps móviles y web adaptadas a las necesidades de tu negocio y tus usuarios.</p>
                     </div>
                     <div class="servicio-card">
-                        <div class="servicio-icon">&#9881;</div>
+                        <div class="servicio-icon"><i class="ri-code-s-slash-line"></i></div>
                         <h3>Software a medida</h3>
                         <p>Soluciones personalizadas que automatizan procesos y optimizan operaciones.</p>
                     </div>
                     <div class="servicio-card">
-                        <div class="servicio-icon">&#127912;</div>
+                        <div class="servicio-icon"><i class="ri-palette-line"></i></div>
                         <h3>Diseño UI/UX</h3>
                         <p>Interfaces intuitivas y atractivas que mejoran la experiencia del usuario.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Portfolio -->
-        <section class="portfolio" id="portfolio">
-            <div class="container">
-                <h2 class="section-title">Proyectos destacados</h2>
-                <p class="section-subtitle">Algunos de los trabajos que reflejan mi experiencia y dedicación</p>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card">
-                        <div class="portfolio-placeholder">&#128444; Proyecto 1</div>
-                        <div class="portfolio-info">
-                            <h3>Plataforma de reservas</h3>
-                            <p class="portfolio-sector">Turismo y ocio</p>
-                            <p>Sistema completo de reservas online con panel de administración y pasarela de pagos.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-placeholder">&#128444; Proyecto 2</div>
-                        <div class="portfolio-info">
-                            <h3>App de delivery</h3>
-                            <p class="portfolio-sector">Restauración</p>
-                            <p>Aplicación móvil para pedidos a domicilio con seguimiento en tiempo real.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-placeholder">&#128444; Proyecto 3</div>
-                        <div class="portfolio-info">
-                            <h3>E-commerce personalizado</h3>
-                            <p class="portfolio-sector">Comercio (retail)</p>
-                            <p>Tienda online con catálogo dinámico, filtros avanzados y gestión de inventario.</p>
-                        </div>
-                    </div>
+                <div style="text-align:center;margin-top:36px;">
+                    <a href="servicios.html" class="btn btn-secondary"><i class="ri-arrow-right-line"></i> Ver todos los servicios</a>
                 </div>
             </div>
         </section>
@@ -157,7 +129,7 @@
             <div class="container">
                 <h2>¿Tienes un proyecto en mente?</h2>
                 <p>Cuéntame tu idea y juntos la convertimos en realidad.</p>
-                <a href="#contacto" class="btn btn-primary btn-large">Solicitar presupuesto</a>
+                <a href="#contacto" class="btn btn-primary btn-large"><i class="ri-send-plane-line"></i> Solicitar presupuesto</a>
             </div>
         </section>
 
@@ -189,7 +161,7 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-large">Enviar mensaje</button>
+                    <button type="submit" class="btn btn-primary btn-large"><i class="ri-send-plane-line"></i> Enviar mensaje</button>
                 </form>
             </div>
         </section>
@@ -204,10 +176,11 @@
                     <span>DreamsDeveloper</span>
                 </div>
                 <nav class="footer-nav">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#servicios">Servicios</a>
+                    <a href="index.html">Home</a>
+                    <a href="servicios.html">Servicios</a>
                     <a href="ejemplos.html">Ejemplos</a>
-                    <a href="#portfolio">Proyectos</a>
+                    <a href="proyectos.html">Proyectos</a>
+                    <a href="planes.html">Planes</a>
                     <a href="#contacto">Contacto</a>
                 </nav>
                 <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>

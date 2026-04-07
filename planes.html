@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planes y precios de desarrollo web - DreamsDeveloper">
+    <title>Planes | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-link">
+                <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                <div class="header-text">
+                    <h1>DreamsDeveloper</h1>
+                    <p>Tu Programador De Confianza</p>
+                </div>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="ejemplos.html">Ejemplos</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="planes.html" class="nav-active">Planes</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="login.html" class="nav-auth">Identifícate</a>
+            <a href="register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <h2>Planes</h2>
+            <p>Elige el plan que mejor se adapte a tu proyecto y presupuesto</p>
+        </section>
+
+        <!-- Planes -->
+        <section class="plans-section">
+            <div class="container">
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <div class="plan-icon"><i class="ri-rocket-line"></i></div>
+                            <h3>Starter</h3>
+                            <p class="plan-desc">Ideal para proyectos pequeños y landing pages</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price-from">Desde</span>
+                            <span class="price-amount">299€</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="ri-check-line"></i> Página web de hasta 5 secciones</li>
+                            <li><i class="ri-check-line"></i> Diseño responsive</li>
+                            <li><i class="ri-check-line"></i> SEO básico</li>
+                            <li><i class="ri-check-line"></i> Formulario de contacto</li>
+                            <li><i class="ri-check-line"></i> 1 revisión de diseño</li>
+                            <li><i class="ri-check-line"></i> Entrega en 7-10 días</li>
+                            <li class="plan-feature-disabled"><i class="ri-close-line"></i> Panel de administración</li>
+                            <li class="plan-feature-disabled"><i class="ri-close-line"></i> Base de datos</li>
+                        </ul>
+                        <a href="index.html#contacto" class="btn btn-secondary btn-large plan-btn">Elegir Starter</a>
+                    </div>
+
+                    <div class="plan-card plan-featured">
+                        <div class="plan-badge">Popular</div>
+                        <div class="plan-header">
+                            <div class="plan-icon"><i class="ri-flashlight-line"></i></div>
+                            <h3>Profesional</h3>
+                            <p class="plan-desc">Para negocios que necesitan funcionalidad completa</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price-from">Desde</span>
+                            <span class="price-amount">899€</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="ri-check-line"></i> Web o app completa</li>
+                            <li><i class="ri-check-line"></i> Diseño UI/UX personalizado</li>
+                            <li><i class="ri-check-line"></i> SEO avanzado</li>
+                            <li><i class="ri-check-line"></i> Panel de administración</li>
+                            <li><i class="ri-check-line"></i> Base de datos</li>
+                            <li><i class="ri-check-line"></i> Autenticación de usuarios</li>
+                            <li><i class="ri-check-line"></i> 3 revisiones de diseño</li>
+                            <li><i class="ri-check-line"></i> Entrega en 15-25 días</li>
+                        </ul>
+                        <a href="index.html#contacto" class="btn btn-primary btn-large plan-btn">Elegir Profesional</a>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <div class="plan-icon"><i class="ri-vip-crown-line"></i></div>
+                            <h3>Enterprise</h3>
+                            <p class="plan-desc">Soluciones a medida para proyectos avanzados</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price-from">Desde</span>
+                            <span class="price-amount">2.499€</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="ri-check-line"></i> Plataforma completa a medida</li>
+                            <li><i class="ri-check-line"></i> Arquitectura escalable</li>
+                            <li><i class="ri-check-line"></i> Integraciones con terceros</li>
+                            <li><i class="ri-check-line"></i> API personalizada</li>
+                            <li><i class="ri-check-line"></i> App móvil incluida</li>
+                            <li><i class="ri-check-line"></i> Dashboard de analítica</li>
+                            <li><i class="ri-check-line"></i> Revisiones ilimitadas</li>
+                            <li><i class="ri-check-line"></i> Soporte prioritario 6 meses</li>
+                        </ul>
+                        <a href="index.html#contacto" class="btn btn-secondary btn-large plan-btn">Elegir Enterprise</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extras -->
+        <section class="extras-section">
+            <div class="container">
+                <h2 class="section-title">Servicios adicionales</h2>
+                <p class="section-subtitle">Añade extras a cualquier plan</p>
+                <div class="extras-grid">
+                    <div class="extra-card">
+                        <i class="ri-shield-check-line"></i>
+                        <h4>Mantenimiento mensual</h4>
+                        <p>Actualizaciones, backups y soporte técnico continuo.</p>
+                        <span class="extra-price">Desde 49€/mes</span>
+                    </div>
+                    <div class="extra-card">
+                        <i class="ri-seo-line"></i>
+                        <h4>SEO avanzado</h4>
+                        <p>Estrategia de posicionamiento, keywords y optimización on-page.</p>
+                        <span class="extra-price">Desde 199€</span>
+                    </div>
+                    <div class="extra-card">
+                        <i class="ri-translate-2"></i>
+                        <h4>Multiidioma</h4>
+                        <p>Traducción y adaptación de tu web a varios idiomas.</p>
+                        <span class="extra-price">Desde 149€/idioma</span>
+                    </div>
+                    <div class="extra-card">
+                        <i class="ri-bar-chart-box-line"></i>
+                        <h4>Analítica y reportes</h4>
+                        <p>Configuración de Google Analytics, dashboards y reportes mensuales.</p>
+                        <span class="extra-price">Desde 99€</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Preguntas frecuentes</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h4><i class="ri-question-line"></i> ¿Los precios incluyen IVA?</h4>
+                        <p>Los precios mostrados son sin IVA. El IVA se aplicará según la legislación vigente.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="ri-question-line"></i> ¿Puedo cambiar de plan después?</h4>
+                        <p>Sí, siempre puedes escalar tu proyecto. Solo pagarías la diferencia entre planes.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="ri-question-line"></i> ¿Cómo es el proceso de pago?</h4>
+                        <p>Se paga un 40% al inicio del proyecto y el 60% restante a la entrega final.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="ri-question-line"></i> ¿Incluye hosting y dominio?</h4>
+                        <p>La configuración del hosting está incluida. El coste del hosting y dominio se gestionan aparte según el proveedor elegido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>¿No sabes qué plan elegir?</h2>
+                <p>Cuéntame tu proyecto y te recomiendo la mejor opción.</p>
+                <a href="index.html#contacto" class="btn btn-primary btn-large"><i class="ri-send-plane-line"></i> Pedir presupuesto</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                    <span>DreamsDeveloper</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="ejemplos.html">Ejemplos</a>
+                    <a href="proyectos.html">Proyectos</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="index.html#contacto">Contacto</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
