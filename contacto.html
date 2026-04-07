@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con DreamsDeveloper - Tus Programadores De Confianza en Ibiza">
+    <title>Contacto | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-link">
+                <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                <div class="header-text">
+                    <h1>DreamsDeveloper</h1>
+                    <p>Tus Programadores De Confianza</p>
+                </div>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="ejemplos.html">Ejemplos</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="planes.html">Planes</a>
+            <a href="contacto.html" class="nav-active">Contacto</a>
+            <a href="login.html" class="nav-auth">Identifícate</a>
+            <a href="register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <h2>Contacto</h2>
+            <p>Escríbenos y te respondemos lo antes posible</p>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div class="container">
+                <form class="contacto-form" name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo de proyecto</label>
+                        <select id="tipo" name="tipo">
+                            <option value="pagina-web">Página web</option>
+                            <option value="aplicacion">Aplicación</option>
+                            <option value="software">Software a medida</option>
+                            <option value="vigilancia">Vigilancia IA</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large"><i class="ri-send-plane-line"></i> Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/icono.png" alt="DreamsDeveloper Logo">
+                    <span>DreamsDeveloper</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="ejemplos.html">Ejemplos</a>
+                    <a href="proyectos.html">Proyectos</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+    <script type="module" src="js/contact.js"></script>
+</body>
+</html>
