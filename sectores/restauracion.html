@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restauración - Soluciones digitales por DreamsDeveloper">
+    <title>Restauración | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="../img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/ejemplos.css">
+    <link rel="stylesheet" href="../css/sector.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="header-link">
+                <img src="../img/icono.png" alt="DreamsDeveloper Logo">
+                <div class="header-text">
+                    <h1>DreamsDeveloper</h1>
+                    <p>Tu Programador De Confianza</p>
+                </div>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="../index.html">Inicio</a>
+            <a href="../index.html#servicios">Servicios</a>
+            <a href="../ejemplos.html" class="nav-active">Ejemplos</a>
+            <a href="../index.html#portfolio">Proyectos</a>
+            <a href="../index.html#contacto">Contacto</a>
+            <a href="../login.html" class="nav-auth">Identifícate</a>
+            <a href="../register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+    </header>
+
+    <main>
+        <section class="sector-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop'); --sector-color: #ff5733;">
+            <div class="sector-hero-content">
+                <a href="../ejemplos.html" class="sector-back">&larr; Todos los sectores</a>
+                <span class="sector-hero-icon">&#127860;</span>
+                <h2>Restauración</h2>
+                <p class="sector-hero-emotion">Placer y disfrute</p>
+            </div>
+        </section>
+
+        <section class="sector-info">
+            <div class="container">
+                <h3 class="sector-info-title">¿Qué puedo hacer por tu negocio?</h3>
+                <p class="sector-info-desc">Apps de delivery, sistemas de pedidos online, cartas digitales interactivas, webs de restaurantes con reservas integradas.</p>
+                <div class="sector-examples">
+                    <span>App de pedidos</span>
+                    <span>Carta digital QR</span>
+                    <span>Web de restaurante</span>
+                    <span>Sistema de delivery</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-services">
+            <div class="container">
+                <h3 class="sector-services-title">Soluciones que ofrezco</h3>
+                <div class="sector-services-grid">
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#128690;</div>
+                        <h4>Apps de delivery</h4>
+                        <p>Aplicaciones de reparto con seguimiento en tiempo real y notificaciones</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#128241;</div>
+                        <h4>Cartas digitales</h4>
+                        <p>Menús interactivos con código QR, fotos de platos y alérgenos</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#127760;</div>
+                        <h4>Webs de restaurantes</h4>
+                        <p>Sitios web con sistema de reservas, galería y ubicación</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#127859;</div>
+                        <h4>Sistemas de pedidos</h4>
+                        <p>Plataformas de pedidos integradas con cocina y gestión de reparto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>¿Necesitas una solución para restauración?</h2>
+                <p>Cuéntame tu idea y la hacemos realidad juntos.</p>
+                <a href="../index.html#contacto" class="btn btn-primary btn-large">Contactar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../img/icono.png" alt="DreamsDeveloper Logo">
+                    <span>DreamsDeveloper</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../index.html#servicios">Servicios</a>
+                    <a href="../ejemplos.html">Ejemplos</a>
+                    <a href="../index.html#portfolio">Proyectos</a>
+                    <a href="../index.html#contacto">Contacto</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

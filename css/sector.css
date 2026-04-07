@@ -1,0 +1,194 @@
+/* ===== Individual Sector Page ===== */
+
+.sector-hero {
+    position: relative;
+    padding: 100px 20px 60px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sector-hero::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: var(--hero-bg) center/cover no-repeat;
+    filter: blur(12px);
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.sector-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--color-bg-dark) 0%, rgba(10,10,20,0.8) 50%, var(--color-bg-dark) 100%);
+    z-index: 0;
+}
+
+.sector-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.sector-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color var(--transition);
+}
+
+.sector-back:hover {
+    color: var(--color-accent);
+}
+
+.sector-hero-icon {
+    display: block;
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.sector-hero h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.sector-hero-emotion {
+    font-size: 1.15rem;
+    color: var(--sector-color, var(--color-accent));
+    font-style: italic;
+}
+
+/* Info section */
+.sector-info {
+    padding: 60px 20px;
+    background-color: var(--color-bg-section);
+}
+
+.sector-info-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 16px;
+}
+
+.sector-info-desc {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 24px;
+}
+
+.sector-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sector-examples span {
+    background-color: var(--color-bg-card);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.sector-examples span:hover {
+    border-color: var(--sector-color, var(--color-accent));
+    color: var(--sector-color, var(--color-accent));
+}
+
+/* Services section */
+.sector-services {
+    padding: 60px 20px;
+    background-color: var(--color-bg-dark);
+}
+
+.sector-services-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sector-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sector-service-card {
+    background-color: var(--color-bg-card);
+    padding: 28px 24px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--sector-color, var(--color-accent));
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sector-service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sector-service-card .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.sector-service-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.sector-service-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sector-hero {
+        padding: 80px 20px 40px;
+        min-height: 250px;
+    }
+
+    .sector-hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .sector-hero-icon {
+        font-size: 2.5rem;
+    }
+
+    .sector-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sector-info-title,
+    .sector-services-title {
+        font-size: 1.3rem;
+    }
+}

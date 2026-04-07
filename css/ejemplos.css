@@ -59,6 +59,26 @@
     color: var(--color-white);
     transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.sector-btn::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: var(--sector-bg) center/cover no-repeat;
+    filter: blur(8px);
+    opacity: 0.2;
+    z-index: 0;
+    transition: opacity var(--transition);
+}
+
+.sector-btn:hover::before {
+    opacity: 0.35;
 }
 
 .sector-btn:hover {
@@ -70,6 +90,8 @@
 .sector-btn-icon {
     font-size: 2rem;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 .sector-btn-name {
@@ -77,11 +99,15 @@
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
 }
 
 .sector-btn-emocion {
     font-size: 0.8rem;
     color: var(--color-text-muted);
+    position: relative;
+    z-index: 1;
 }
 
 /* Colores de borde por sector */
@@ -99,56 +125,6 @@
 .sector-btn.sector-educacion { border-color: #f4d03f; }
 .sector-btn.sector-personales { border-color: #f5b7b1; }
 .sector-btn.sector-logistica { border-color: #7f8c8d; }
-
-/* Sector detail sections */
-.sector-detail {
-    padding: 50px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.sector-detail:nth-child(even) {
-    background-color: var(--color-bg-section);
-}
-
-.sector-detail:nth-child(odd) {
-    background-color: var(--color-bg-dark);
-}
-
-.detail-title {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.detail-desc {
-    color: var(--color-text);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    max-width: 700px;
-    margin-bottom: 20px;
-}
-
-.detail-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.detail-examples span {
-    background-color: var(--color-bg-card);
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    transition: border-color var(--transition), color var(--transition);
-}
-
-.detail-examples span:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-}
 
 /* Responsive */
 @media (max-width: 768px) {

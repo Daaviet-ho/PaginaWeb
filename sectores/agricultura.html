@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agricultura y productos locales - Soluciones digitales por DreamsDeveloper">
+    <title>Agricultura y productos locales | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="../img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/ejemplos.css">
+    <link rel="stylesheet" href="../css/sector.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="header-link">
+                <img src="../img/icono.png" alt="DreamsDeveloper Logo">
+                <div class="header-text">
+                    <h1>DreamsDeveloper</h1>
+                    <p>Tu Programador De Confianza</p>
+                </div>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="../index.html">Inicio</a>
+            <a href="../index.html#servicios">Servicios</a>
+            <a href="../ejemplos.html" class="nav-active">Ejemplos</a>
+            <a href="../index.html#portfolio">Proyectos</a>
+            <a href="../index.html#contacto">Contacto</a>
+            <a href="../login.html" class="nav-auth">Identifícate</a>
+            <a href="../register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+    </header>
+
+    <main>
+        <section class="sector-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop'); --sector-color: #2ecc71;">
+            <div class="sector-hero-content">
+                <a href="../ejemplos.html" class="sector-back">&larr; Todos los sectores</a>
+                <span class="sector-hero-icon">&#127793;</span>
+                <h2>Agricultura y productos locales</h2>
+                <p class="sector-hero-emotion">Autenticidad y conexión con lo natural</p>
+            </div>
+        </section>
+
+        <section class="sector-info">
+            <div class="container">
+                <h3 class="sector-info-title">¿Qué puedo hacer por tu negocio?</h3>
+                <p class="sector-info-desc">Tiendas de productos locales, apps de trazabilidad, webs de cooperativas, sistemas de venta directa.</p>
+                <div class="sector-examples">
+                    <span>Tienda km 0</span>
+                    <span>Trazabilidad</span>
+                    <span>Web cooperativa</span>
+                    <span>Venta directa</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-services">
+            <div class="container">
+                <h3 class="sector-services-title">Soluciones que ofrezco</h3>
+                <div class="sector-services-grid">
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#129382;</div>
+                        <h4>Tiendas km 0</h4>
+                        <p>E-commerce de productos locales con entrega y recogida</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#128269;</div>
+                        <h4>Trazabilidad</h4>
+                        <p>Apps de seguimiento del campo a la mesa con certificaciones</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#129309;</div>
+                        <h4>Webs de cooperativas</h4>
+                        <p>Sitios web para asociaciones agrícolas y productores</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#128230;</div>
+                        <h4>Venta directa</h4>
+                        <p>Plataformas de venta directa productor-consumidor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>¿Necesitas una solución para agricultura y productos locales?</h2>
+                <p>Cuéntame tu idea y la hacemos realidad juntos.</p>
+                <a href="../index.html#contacto" class="btn btn-primary btn-large">Contactar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../img/icono.png" alt="DreamsDeveloper Logo">
+                    <span>DreamsDeveloper</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../index.html#servicios">Servicios</a>
+                    <a href="../ejemplos.html">Ejemplos</a>
+                    <a href="../index.html#portfolio">Proyectos</a>
+                    <a href="../index.html#contacto">Contacto</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tecnología y marketing - Soluciones digitales por DreamsDeveloper">
+    <title>Tecnología y marketing | DreamsDeveloper</title>
+    <link rel="icon" type="image/png" href="../img/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/ejemplos.css">
+    <link rel="stylesheet" href="../css/sector.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="header-link">
+                <img src="../img/icono.png" alt="DreamsDeveloper Logo">
+                <div class="header-text">
+                    <h1>DreamsDeveloper</h1>
+                    <p>Tu Programador De Confianza</p>
+                </div>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="../index.html">Inicio</a>
+            <a href="../index.html#servicios">Servicios</a>
+            <a href="../ejemplos.html" class="nav-active">Ejemplos</a>
+            <a href="../index.html#portfolio">Proyectos</a>
+            <a href="../index.html#contacto">Contacto</a>
+            <a href="../login.html" class="nav-auth">Identifícate</a>
+            <a href="../register.html" class="nav-auth nav-auth-accent">Trabaja Conmigo</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+    </header>
+
+    <main>
+        <section class="sector-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop'); --sector-color: #2ecc71;">
+            <div class="sector-hero-content">
+                <a href="../ejemplos.html" class="sector-back">&larr; Todos los sectores</a>
+                <span class="sector-hero-icon">&#128187;</span>
+                <h2>Tecnología y marketing</h2>
+                <p class="sector-hero-emotion">Visibilidad y crecimiento</p>
+            </div>
+        </section>
+
+        <section class="sector-info">
+            <div class="container">
+                <h3 class="sector-info-title">¿Qué puedo hacer por tu negocio?</h3>
+                <p class="sector-info-desc">Landing pages de conversión, dashboards de analítica, tools de automatización, webs SaaS.</p>
+                <div class="sector-examples">
+                    <span>Landing de conversión</span>
+                    <span>Dashboard analítica</span>
+                    <span>Herramienta SaaS</span>
+                    <span>Automatización</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sector-services">
+            <div class="container">
+                <h3 class="sector-services-title">Soluciones que ofrezco</h3>
+                <div class="sector-services-grid">
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#127919;</div>
+                        <h4>Landing pages</h4>
+                        <p>Páginas de aterrizaje optimizadas para maximizar conversiones</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#128200;</div>
+                        <h4>Dashboards de analítica</h4>
+                        <p>Paneles de métricas y datos en tiempo real</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#9729;</div>
+                        <h4>Herramientas SaaS</h4>
+                        <p>Plataformas con suscripciones, paneles de usuario y API</p>
+                    </div>
+                    <div class="sector-service-card">
+                        <div class="service-icon">&#9889;</div>
+                        <h4>Automatización</h4>
+                        <p>Flujos automatizados de marketing, emails y procesos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>¿Necesitas una solución para tecnología y marketing?</h2>
+                <p>Cuéntame tu idea y la hacemos realidad juntos.</p>
+                <a href="../index.html#contacto" class="btn btn-primary btn-large">Contactar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../img/icono.png" alt="DreamsDeveloper Logo">
+                    <span>DreamsDeveloper</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../index.html#servicios">Servicios</a>
+                    <a href="../ejemplos.html">Ejemplos</a>
+                    <a href="../index.html#portfolio">Proyectos</a>
+                    <a href="../index.html#contacto">Contacto</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 DreamsDeveloper. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
