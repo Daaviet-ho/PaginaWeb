@@ -485,6 +485,61 @@ header {
     line-height: 1.6;
 }
 
+/* ===== Alianza ===== */
+.alianza {
+    padding: 80px 20px;
+    background-color: var(--color-bg-dark);
+}
+
+.alianza-card {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    background-color: var(--color-bg-card);
+    padding: 40px 36px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--color-accent);
+}
+
+.alianza-icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: 16px;
+}
+
+.alianza-icon i {
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+.alianza-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 14px;
+}
+
+.alianza-content p {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.alianza-content strong {
+    color: var(--color-white);
+}
+
+.alianza-content .btn {
+    margin-top: 8px;
+}
+
 /* ===== Testimonios ===== */
 .testimonios {
     padding: 80px 20px;
@@ -717,5 +772,12 @@ textarea:focus-visible {
 
     .cta h2 {
         font-size: 1.5rem;
+    }
+
+    .alianza-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 28px 20px;
     }
 }
