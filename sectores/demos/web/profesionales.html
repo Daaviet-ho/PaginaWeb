@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asesoría Balanzat — Consultoría integral en Ibiza</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#7b8fa0;--primary-dark:#5d7080;--accent:#2c3e50;--dark:#0e1117;--darker:#0a0c10;--card:#161a22;--text:#a8b4c0;--white:#fff;--radius:10px;--font-heading:'DM Serif Display',serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(10,12,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(123,143,160,0.1)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--white);padding:10px 24px;border-radius:50px;font-weight:600;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:linear-gradient(180deg,var(--darker),#141820,var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(123,143,160,0.1);border:1px solid rgba(123,143,160,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);margin-bottom:22px;font-weight:500}
+.hero h1{font-family:var(--font-heading);font-size:3.2rem;color:var(--white);line-height:1.15;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero-sub{font-size:1.05rem;max-width:520px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.15)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-trust{display:flex;gap:30px;justify-content:center;margin-top:45px;font-size:.82rem;color:var(--text)}
+.hero-trust span{display:flex;align-items:center;gap:6px}
+.hero-trust i{color:var(--primary);font-size:1.1rem}
+
+.section-label{text-align:center;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px}
+.section-sub{text-align:center;font-size:.9rem;margin-bottom:40px}
+
+.services{padding:80px 20px;background:var(--dark)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.serv-card{background:var(--card);border-radius:var(--radius);padding:32px 26px;border-left:4px solid var(--primary);transition:transform .3s}
+.serv-card:hover{transform:translateY(-4px)}
+.serv-card i{font-size:2rem;color:var(--primary);margin-bottom:14px}
+.serv-card h4{font-family:var(--font-heading);color:var(--white);font-size:1.1rem;margin-bottom:8px}
+.serv-card p{font-size:.88rem;margin-bottom:14px}
+.serv-list{list-style:none;padding:0}
+.serv-list li{font-size:.82rem;padding:4px 0;display:flex;align-items:center;gap:6px}
+.serv-list li i{color:var(--primary);font-size:.8rem}
+
+.team{padding:80px 20px;background:var(--darker)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.team-card{background:var(--card);border-radius:var(--radius);overflow:hidden;text-align:center;transition:transform .3s}
+.team-card:hover{transform:translateY(-4px)}
+.team-img{height:260px;background-size:cover;background-position:center top}
+.team-body{padding:20px}
+.team-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:2px}
+.team-body span{font-size:.8rem;color:var(--primary);display:block;margin-bottom:8px}
+.team-body p{font-size:.82rem}
+.team-social{display:flex;justify-content:center;gap:12px;margin-top:12px}
+.team-social a{color:var(--text);font-size:1.1rem;transition:color .3s}
+.team-social a:hover{color:var(--primary)}
+
+.process{padding:80px 20px;background:var(--dark)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:900px;margin:0 auto}
+.proc-step{text-align:center}
+.proc-num{width:48px;height:48px;margin:0 auto 14px;background:var(--primary);color:var(--white);font-family:var(--font-heading);font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.proc-step h4{font-family:var(--font-heading);color:var(--white);font-size:1rem;margin-bottom:6px}
+.proc-step p{font-size:.82rem}
+
+.contact{padding:80px 20px;background:var(--darker)}
+.contact-card{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(123,143,160,0.1)}
+.contact-card h3{font-family:var(--font-heading);font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:8px}
+.contact-card>p{text-align:center;font-size:.9rem;margin-bottom:28px}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-full{grid-column:1/-1}
+.contact-submit{grid-column:1/-1;margin-top:10px}
+.contact-submit .btn{width:100%;justify-content:center}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--white)}
+.demo-banner a{color:var(--white);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.hero-trust{flex-direction:column;gap:10px}.proc-grid{grid-template-columns:1fr 1fr}.contact-form{grid-template-columns:1fr}}
+@media(max-width:480px){.proc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-briefcase-4-line"></i> Asesoría Balanzat</a>
+    <div class="nav-links"><a href="#servicios">Servicios</a><a href="#equipo">Equipo</a><a href="#proceso">Proceso</a><a href="#contacto" class="nav-cta">Consulta gratuita</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-shield-star-line"></i> Consultoría de confianza en Ibiza</div>
+        <h1>Tu negocio en <span>las mejores manos</span></h1>
+        <p class="hero-sub">Asesoría fiscal, laboral, contable y jurídica para autónomos y empresas en Baleares. Más de 20 años de experiencia a tu lado.</p>
+        <div class="hero-btns"><a href="#servicios" class="btn btn-primary"><i class="ri-service-line"></i> Ver servicios</a><a href="#contacto" class="btn btn-outline"><i class="ri-phone-line"></i> Consulta gratuita</a></div>
+        <div class="hero-trust"><span><i class="ri-user-star-line"></i> +500 clientes activos</span><span><i class="ri-award-line"></i> 20+ años</span><span><i class="ri-star-line"></i> 4.9 en Google</span></div>
+    </div>
+</section>
+
+<section class="services" id="servicios">
+    <div class="container">
+        <p class="section-label">Servicios</p>
+        <h2 class="section-title">Soluciones profesionales completas</h2>
+        <p class="section-sub">Te acompañamos en cada fase de tu actividad empresarial.</p>
+        <div class="serv-grid">
+            <div class="serv-card"><i class="ri-money-euro-circle-line"></i><h4>Asesoría Fiscal</h4><p>Optimización tributaria y cumplimiento normativo.</p><ul class="serv-list"><li><i class="ri-check-line"></i> Declaraciones IVA, IRPF, IS</li><li><i class="ri-check-line"></i> Planificación fiscal</li><li><i class="ri-check-line"></i> Representación ante Hacienda</li></ul></div>
+            <div class="serv-card"><i class="ri-team-line"></i><h4>Asesoría Laboral</h4><p>Gestión completa de personal y nóminas.</p><ul class="serv-list"><li><i class="ri-check-line"></i> Nóminas y seguros sociales</li><li><i class="ri-check-line"></i> Contratos y altas/bajas</li><li><i class="ri-check-line"></i> Prevención de riesgos</li></ul></div>
+            <div class="serv-card"><i class="ri-calculator-line"></i><h4>Contabilidad</h4><p>Llevamos tus cuentas al día y sin errores.</p><ul class="serv-list"><li><i class="ri-check-line"></i> Contabilidad completa</li><li><i class="ri-check-line"></i> Cuentas anuales</li><li><i class="ri-check-line"></i> Informes financieros</li></ul></div>
+            <div class="serv-card"><i class="ri-scales-3-line"></i><h4>Asesoría Jurídica</h4><p>Protección legal integral para tu empresa.</p><ul class="serv-list"><li><i class="ri-check-line"></i> Constitución de sociedades</li><li><i class="ri-check-line"></i> Contratos mercantiles</li><li><i class="ri-check-line"></i> Derecho inmobiliario</li></ul></div>
+        </div>
+    </div>
+</section>
+
+<section class="team" id="equipo">
+    <div class="container">
+        <p class="section-label">Equipo</p>
+        <h2 class="section-title">Profesionales a tu servicio</h2>
+        <div class="team-grid">
+            <div class="team-card"><div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop')"></div><div class="team-body"><h4>Carlos Balanzat</h4><span>Director — Fiscalista</span><p>Economista colegiado, experto en fiscalidad balear y planificación empresarial.</p><div class="team-social"><a href="#"><i class="ri-linkedin-box-line"></i></a><a href="#"><i class="ri-mail-line"></i></a></div></div></div>
+            <div class="team-card"><div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop')"></div><div class="team-body"><h4>Marta Escandell</h4><span>Abogada</span><p>Especializada en derecho mercantil, inmobiliario y litigios empresariales.</p><div class="team-social"><a href="#"><i class="ri-linkedin-box-line"></i></a><a href="#"><i class="ri-mail-line"></i></a></div></div></div>
+            <div class="team-card"><div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop')"></div><div class="team-body"><h4>Joan Tur</h4><span>Laboralista</span><p>Graduado social con 15 años gestionando nóminas y relaciones laborales.</p><div class="team-social"><a href="#"><i class="ri-linkedin-box-line"></i></a><a href="#"><i class="ri-mail-line"></i></a></div></div></div>
+            <div class="team-card"><div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop')"></div><div class="team-body"><h4>Ana Roig</h4><span>Contable</span><p>Máster en contabilidad y auditoría. Precisión y cumplimiento garantizados.</p><div class="team-social"><a href="#"><i class="ri-linkedin-box-line"></i></a><a href="#"><i class="ri-mail-line"></i></a></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="process" id="proceso">
+    <div class="container">
+        <p class="section-label">Metodología</p>
+        <h2 class="section-title">Cómo trabajamos</h2>
+        <p class="section-sub">Un proceso claro, transparente y enfocado en resultados.</p>
+        <div class="proc-grid">
+            <div class="proc-step"><div class="proc-num">1</div><h4>Consulta inicial</h4><p>Analizamos tu situación actual sin compromiso</p></div>
+            <div class="proc-step"><div class="proc-num">2</div><h4>Diagnóstico</h4><p>Evaluamos opciones y proponemos soluciones</p></div>
+            <div class="proc-step"><div class="proc-num">3</div><h4>Implementación</h4><p>Ejecutamos la estrategia acordada</p></div>
+            <div class="proc-step"><div class="proc-num">4</div><h4>Seguimiento</h4><p>Control continuo y ajustes periódicos</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contacto">
+    <div class="container">
+        <div class="contact-card">
+            <h3>Consulta gratuita</h3>
+            <p>Cuéntanos tu caso y te orientamos sin compromiso.</p>
+            <div class="contact-form">
+                <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+                <div class="form-group"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+                <div class="form-group"><label>Servicio</label><select><option>Asesoría fiscal</option><option>Asesoría laboral</option><option>Contabilidad</option><option>Asesoría jurídica</option><option>Otro</option></select></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group form-full"><label>Consulta</label><textarea rows="3" placeholder="Describe brevemente tu consulta..."></textarea></div>
+                <div class="contact-submit"><button class="btn btn-primary"><i class="ri-send-plane-line"></i> Enviar consulta</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-briefcase-4-line"></i> Asesoría Balanzat</p>
+    <p class="footer-copy">© 2026 Asesoría Balanzat — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector profesionales — <a href="../../profesionales.html">Volver al sector</a></div>
+
+</body>
+</html>

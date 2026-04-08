@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia Isla — Formación online y presencial en Ibiza</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#f1c40f;--primary-dark:#d4ac0d;--accent:#f9e154;--dark:#12110a;--darker:#0c0b07;--card:#1a1810;--text:#b0a880;--white:#fff;--radius:12px;--font-heading:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(12,11,7,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(241,196,15,0.08)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);font-weight:700;display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--dark);padding:10px 24px;border-radius:50px;font-weight:700;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:radial-gradient(ellipse at 50% 20%,rgba(241,196,15,0.06),transparent 60%),linear-gradient(180deg,var(--darker),var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(241,196,15,0.1);border:1px solid rgba(241,196,15,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);font-weight:600;margin-bottom:22px}
+.hero h1{font-family:var(--font-heading);font-size:3.2rem;color:var(--white);line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero p{font-size:1.05rem;max-width:540px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:700;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--dark)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.12)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:45px}
+.hero-stat{text-align:center}
+.hero-stat strong{display:block;font-family:var(--font-heading);font-size:2rem;color:var(--white)}
+.hero-stat span{font-size:.8rem}
+
+.section-label{text-align:center;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px}
+.section-sub{text-align:center;font-size:.9rem;margin-bottom:45px}
+
+.courses{padding:80px 20px;background:var(--dark)}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.course-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.course-card:hover{transform:translateY(-5px)}
+.course-img{height:180px;background-size:cover;background-position:center;position:relative}
+.course-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:50px;font-size:.72rem;font-weight:700}
+.badge-online{background:var(--primary);color:var(--dark)}
+.badge-presential{background:#8e44ad;color:var(--white)}
+.badge-hybrid{background:#e67e22;color:var(--white)}
+.course-body{padding:20px}
+.course-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.1rem;margin-bottom:6px}
+.course-body p{font-size:.85rem;margin-bottom:12px}
+.course-meta{display:flex;gap:14px;font-size:.8rem;margin-bottom:14px}
+.course-meta span{display:flex;align-items:center;gap:4px}
+.course-meta i{color:var(--primary)}
+.course-footer{display:flex;justify-content:space-between;align-items:center}
+.course-price{font-family:var(--font-heading);font-size:1.3rem;color:var(--primary)}
+.course-btn{background:rgba(241,196,15,0.1);color:var(--primary);border:none;padding:8px 18px;border-radius:50px;font-weight:600;font-size:.82rem;cursor:pointer;transition:background .3s}
+.course-btn:hover{background:rgba(241,196,15,0.2)}
+
+.teachers{padding:80px 20px;background:var(--darker)}
+.teach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.teach-card{background:var(--card);border-radius:var(--radius);overflow:hidden;text-align:center;transition:transform .3s}
+.teach-card:hover{transform:translateY(-4px)}
+.teach-img{height:240px;background-size:cover;background-position:center top}
+.teach-body{padding:18px}
+.teach-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:2px}
+.teach-body span{font-size:.8rem;color:var(--primary);display:block;margin-bottom:6px}
+.teach-body p{font-size:.82rem}
+
+.features{padding:60px 20px;background:var(--dark)}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.feat-card{text-align:center;padding:24px 16px}
+.feat-icon{width:52px;height:52px;margin:0 auto 12px;background:rgba(241,196,15,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--primary)}
+.feat-card h4{font-family:var(--font-heading);color:var(--white);font-size:.95rem;margin-bottom:6px}
+.feat-card p{font-size:.8rem}
+
+.enroll{padding:80px 20px;background:var(--darker)}
+.enr-card{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(241,196,15,0.1)}
+.enr-card h3{font-family:var(--font-heading);font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:8px}
+.enr-card>p{text-align:center;font-size:.9rem;margin-bottom:28px}
+.enr-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-full{grid-column:1/-1}
+.enr-submit{grid-column:1/-1;margin-top:10px}
+.enr-submit .btn{width:100%;justify-content:center}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--dark)}
+.demo-banner a{color:var(--dark);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.hero-stats{flex-direction:column;gap:16px}.feat-grid{grid-template-columns:1fr 1fr}.enr-form{grid-template-columns:1fr}}
+@media(max-width:480px){.feat-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-graduation-cap-line"></i> Academia Isla</a>
+    <div class="nav-links"><a href="#cursos">Cursos</a><a href="#profesores">Profesores</a><a href="#matricula">Matrícula</a><a href="#matricula" class="nav-cta">Inscribirme</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-book-open-line"></i> Convocatoria abierta 2026</div>
+        <h1>Aprende sin límites en <span>Ibiza</span></h1>
+        <p>Formación presencial, online y híbrida en tecnología, idiomas, creatividad y negocios. Clases con profesionales en activo.</p>
+        <div class="hero-btns"><a href="#cursos" class="btn btn-primary"><i class="ri-search-line"></i> Explorar cursos</a><a href="#matricula" class="btn btn-outline"><i class="ri-file-text-line"></i> Matricúlate</a></div>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong>2.400+</strong><span>Alumnos formados</span></div>
+            <div class="hero-stat"><strong>45</strong><span>Cursos activos</span></div>
+            <div class="hero-stat"><strong>96%</strong><span>Satisfacción</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="courses" id="cursos">
+    <div class="container">
+        <p class="section-label">Catálogo</p>
+        <h2 class="section-title">Cursos destacados</h2>
+        <p class="section-sub">Formación práctica adaptada al mercado laboral actual.</p>
+        <div class="course-grid">
+            <div class="course-card"><div class="course-img" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop')"><span class="course-badge badge-online">Online</span></div><div class="course-body"><h4>Desarrollo Web Full Stack</h4><p>HTML, CSS, JavaScript, React, Node.js y bases de datos. De cero a profesional.</p><div class="course-meta"><span><i class="ri-time-line"></i> 120h</span><span><i class="ri-calendar-line"></i> 6 meses</span><span><i class="ri-group-line"></i> 18 plazas</span></div><div class="course-footer"><span class="course-price">1.290€</span><button class="course-btn">Ver curso</button></div></div></div>
+            <div class="course-card"><div class="course-img" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&h=400&fit=crop')"><span class="course-badge badge-presential">Presencial</span></div><div class="course-body"><h4>Inglés Business B2</h4><p>Comunicación profesional, presentaciones, negociación y writing avanzado.</p><div class="course-meta"><span><i class="ri-time-line"></i> 80h</span><span><i class="ri-calendar-line"></i> 4 meses</span><span><i class="ri-group-line"></i> 12 plazas</span></div><div class="course-footer"><span class="course-price">690€</span><button class="course-btn">Ver curso</button></div></div></div>
+            <div class="course-card"><div class="course-img" style="background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop')"><span class="course-badge badge-hybrid">Híbrido</span></div><div class="course-body"><h4>Marketing Digital & Social Media</h4><p>SEO, SEM, redes sociales, analítica web, email marketing y estrategia de contenidos.</p><div class="course-meta"><span><i class="ri-time-line"></i> 60h</span><span><i class="ri-calendar-line"></i> 3 meses</span><span><i class="ri-group-line"></i> 20 plazas</span></div><div class="course-footer"><span class="course-price">590€</span><button class="course-btn">Ver curso</button></div></div></div>
+            <div class="course-card"><div class="course-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop')"><span class="course-badge badge-online">Online</span></div><div class="course-body"><h4>Diseño UX/UI</h4><p>Figma, Design Thinking, prototipado, user research y design systems.</p><div class="course-meta"><span><i class="ri-time-line"></i> 90h</span><span><i class="ri-calendar-line"></i> 4 meses</span><span><i class="ri-group-line"></i> 15 plazas</span></div><div class="course-footer"><span class="course-price">890€</span><button class="course-btn">Ver curso</button></div></div></div>
+            <div class="course-card"><div class="course-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop')"><span class="course-badge badge-presential">Presencial</span></div><div class="course-body"><h4>Contabilidad y Finanzas</h4><p>Contabilidad general, fiscalidad, facturación electrónica y análisis financiero.</p><div class="course-meta"><span><i class="ri-time-line"></i> 70h</span><span><i class="ri-calendar-line"></i> 3 meses</span><span><i class="ri-group-line"></i> 14 plazas</span></div><div class="course-footer"><span class="course-price">520€</span><button class="course-btn">Ver curso</button></div></div></div>
+            <div class="course-card"><div class="course-img" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop')"><span class="course-badge badge-hybrid">Híbrido</span></div><div class="course-body"><h4>Inteligencia Artificial aplicada</h4><p>Prompting, automatización con IA, herramientas generativas y ética en IA.</p><div class="course-meta"><span><i class="ri-time-line"></i> 40h</span><span><i class="ri-calendar-line"></i> 2 meses</span><span><i class="ri-group-line"></i> 22 plazas</span></div><div class="course-footer"><span class="course-price">390€</span><button class="course-btn">Ver curso</button></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="teachers" id="profesores">
+    <div class="container">
+        <p class="section-label">Profesorado</p>
+        <h2 class="section-title">Aprende de los mejores</h2>
+        <p class="section-sub">Profesionales en activo que comparten su experiencia real.</p>
+        <div class="teach-grid">
+            <div class="teach-card"><div class="teach-img" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop')"></div><div class="teach-body"><h4>David Torres</h4><span>Desarrollo Web</span><p>Senior Full Stack Developer, 10 años de experiencia.</p></div></div>
+            <div class="teach-card"><div class="teach-img" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop')"></div><div class="teach-body"><h4>Lucía Martín</h4><span>Marketing Digital</span><p>Directora de marketing digital en agencia multinacional.</p></div></div>
+            <div class="teach-card"><div class="teach-img" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop')"></div><div class="teach-body"><h4>James Miller</h4><span>Inglés Business</span><p>Native speaker, MA en Applied Linguistics por Cambridge.</p></div></div>
+            <div class="teach-card"><div class="teach-img" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop')"></div><div class="teach-body"><h4>Marta Gómez</h4><span>Diseño UX/UI</span><p>Lead Designer en startup de producto con 8 años de carrera.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="feat-grid">
+            <div class="feat-card"><div class="feat-icon"><i class="ri-video-line"></i></div><h4>Clases grabadas</h4><p>Accede al contenido cuando quieras</p></div>
+            <div class="feat-card"><div class="feat-icon"><i class="ri-award-line"></i></div><h4>Certificado oficial</h4><p>Diploma con validez profesional</p></div>
+            <div class="feat-card"><div class="feat-icon"><i class="ri-user-star-line"></i></div><h4>Tutorías 1:1</h4><p>Sesiones individuales con el profesor</p></div>
+            <div class="feat-card"><div class="feat-icon"><i class="ri-briefcase-line"></i></div><h4>Bolsa de empleo</h4><p>Conectamos alumnos con empresas</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="enroll" id="matricula">
+    <div class="container">
+        <div class="enr-card">
+            <h3>Solicita tu matrícula</h3>
+            <p>Completa el formulario y te enviaremos toda la información del curso.</p>
+            <div class="enr-form">
+                <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre completo"></div>
+                <div class="form-group"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group"><label>Curso de interés</label><select><option>Desarrollo Web Full Stack</option><option>Inglés Business B2</option><option>Marketing Digital</option><option>Diseño UX/UI</option><option>Contabilidad y Finanzas</option><option>Inteligencia Artificial</option></select></div>
+                <div class="form-group form-full"><label>Comentarios</label><textarea rows="2" placeholder="¿Tienes alguna duda o necesitas más información?"></textarea></div>
+                <div class="enr-submit"><button class="btn btn-primary"><i class="ri-send-plane-line"></i> Solicitar matrícula</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-graduation-cap-line"></i> Academia Isla</p>
+    <p class="footer-copy">© 2026 Academia Isla — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector educación — <a href="../../educacion.html">Volver al sector</a></div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isla Boutique — Moda y lifestyle de Ibiza</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#c39bd3;--primary-dark:#a87bbf;--accent:#e8d5f5;--dark:#12091a;--darker:#0d0613;--card:#1e1228;--text:#cfc2d8;--white:#fff;--radius:10px;--font-heading:'DM Serif Display',serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(13,6,19,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(195,155,211,0.1)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.4rem;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--dark);padding:10px 24px;border-radius:50px;font-weight:600;font-size:.85rem}
+.nav-icons{display:flex;gap:16px;align-items:center}
+.nav-icons a{font-size:1.2rem;color:var(--text);transition:color .3s}
+.nav-icons a:hover{color:var(--primary)}
+.nav-icons .cart-badge{position:relative}
+.nav-icons .cart-badge::after{content:'2';position:absolute;top:-6px;right:-8px;background:var(--primary);color:var(--dark);font-size:.6rem;font-weight:700;width:16px;height:16px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:linear-gradient(180deg,var(--darker),#1a0f26,var(--dark))}
+.hero-tag{display:inline-block;background:rgba(195,155,211,0.1);border:1px solid rgba(195,155,211,0.2);padding:8px 20px;border-radius:50px;font-size:.78rem;color:var(--primary);margin-bottom:22px;font-weight:500}
+.hero h1{font-family:var(--font-heading);font-size:3.5rem;color:var(--white);line-height:1.15;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero-sub{font-size:1.05rem;max-width:500px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--dark)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.15)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+.categories{padding:80px 20px;background:var(--dark)}
+.section-label{text-align:center;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:40px}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{position:relative;height:280px;border-radius:var(--radius);overflow:hidden;cursor:pointer}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cat-card:hover img{transform:scale(1.06)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.7),transparent 60%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:24px;text-align:center}
+.cat-overlay h4{font-family:var(--font-heading);font-size:1.2rem;color:var(--white)}
+.cat-overlay span{font-size:.78rem;color:var(--primary)}
+
+.products{padding:80px 20px;background:var(--darker)}
+.prod-filter{display:flex;justify-content:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.prod-filter span{background:var(--card);color:var(--text);padding:8px 20px;border-radius:50px;font-size:.82rem;cursor:pointer;border:1px solid transparent;transition:all .3s}
+.prod-filter span.active,.prod-filter span:hover{border-color:var(--primary);color:var(--primary)}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.prod-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.prod-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.4)}
+.prod-img{height:280px;background-size:cover;background-position:center;position:relative}
+.prod-tag{position:absolute;top:12px;left:12px;background:var(--primary);color:var(--dark);font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.prod-fav{position:absolute;top:12px;right:12px;width:34px;height:34px;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1rem;cursor:pointer;transition:background .3s}
+.prod-fav:hover{background:var(--primary);color:var(--dark)}
+.prod-body{padding:18px 20px}
+.prod-body h4{font-family:var(--font-heading);font-size:1.05rem;color:var(--white);margin-bottom:4px}
+.prod-body p{font-size:.8rem;color:var(--text);margin-bottom:10px}
+.prod-bottom{display:flex;justify-content:space-between;align-items:center}
+.prod-price{font-family:var(--font-heading);font-size:1.2rem;color:var(--primary)}
+.prod-add{background:var(--primary);color:var(--dark);border:none;padding:8px 16px;border-radius:50px;font-size:.78rem;font-weight:600;cursor:pointer;transition:background .3s}
+.prod-add:hover{background:var(--primary-dark);color:var(--white)}
+
+.promo{padding:80px 20px;background:var(--dark);text-align:center}
+.promo-card{background:linear-gradient(135deg,rgba(195,155,211,0.08),rgba(195,155,211,0.02));border:1px solid rgba(195,155,211,0.15);border-radius:16px;padding:50px 40px;max-width:700px;margin:0 auto}
+.promo-card h3{font-family:var(--font-heading);font-size:2rem;color:var(--white);margin-bottom:12px}
+.promo-card p{font-size:.95rem;margin-bottom:24px}
+.promo-code{display:inline-block;background:rgba(195,155,211,0.15);color:var(--primary);padding:10px 28px;border-radius:8px;font-family:monospace;font-size:1.1rem;font-weight:700;letter-spacing:3px;margin-bottom:20px;border:1px dashed rgba(195,155,211,0.3)}
+
+.features{padding:60px 20px;background:var(--darker)}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;text-align:center}
+.feat-item i{font-size:1.8rem;color:var(--primary);margin-bottom:10px}
+.feat-item h4{font-family:var(--font-heading);color:var(--white);font-size:1rem;margin-bottom:4px}
+.feat-item p{font-size:.82rem}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--dark)}
+.demo-banner a{color:var(--dark);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links,.nav-icons{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.cat-grid{grid-template-columns:1fr 1fr}.prod-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cat-grid,.prod-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-store-3-line"></i> Isla Boutique</a>
+    <div class="nav-links"><a href="#categorias">Colecciones</a><a href="#productos">Tienda</a><a href="#promo">Ofertas</a></div>
+    <div class="nav-icons"><a href="#"><i class="ri-search-line"></i></a><a href="#"><i class="ri-heart-line"></i></a><a href="#" class="cart-badge"><i class="ri-shopping-bag-line"></i></a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag">Colección Verano 2026</div>
+        <h1>Estilo <span>mediterráneo</span> auténtico</h1>
+        <p class="hero-sub">Moda, complementos y lifestyle inspirados en la esencia de Ibiza. Envíos a toda Europa.</p>
+        <div class="hero-btns"><a href="#productos" class="btn btn-primary"><i class="ri-shopping-bag-line"></i> Ir a la tienda</a><a href="#categorias" class="btn btn-outline">Ver colecciones</a></div>
+    </div>
+</section>
+
+<section class="categories" id="categorias">
+    <div class="container">
+        <p class="section-label">Colecciones</p>
+        <h2 class="section-title">Explora por categoría</h2>
+        <div class="cat-grid">
+            <div class="cat-card"><img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=400&fit=crop" alt="Mujer"><div class="cat-overlay"><h4>Mujer</h4><span>86 productos</span></div></div>
+            <div class="cat-card"><img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=400&h=400&fit=crop" alt="Hombre"><div class="cat-overlay"><h4>Hombre</h4><span>64 productos</span></div></div>
+            <div class="cat-card"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Accesorios"><div class="cat-overlay"><h4>Accesorios</h4><span>42 productos</span></div></div>
+            <div class="cat-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop" alt="Home"><div class="cat-overlay"><h4>Home & Deco</h4><span>28 productos</span></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="products" id="productos">
+    <div class="container">
+        <p class="section-label">Tienda</p>
+        <h2 class="section-title">Prendas destacadas</h2>
+        <div class="prod-filter"><span class="active">Todo</span><span>Nuevo</span><span>Más vendido</span><span>Oferta</span></div>
+        <div class="prod-grid">
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1434389677669-e08b4cda3a0c?w=400&h=500&fit=crop')"><span class="prod-tag">Nuevo</span><span class="prod-fav"><i class="ri-heart-line"></i></span></div><div class="prod-body"><h4>Vestido Lino Atardecer</h4><p>Lino natural · Tallas XS-XL</p><div class="prod-bottom"><span class="prod-price">79€</span><button class="prod-add"><i class="ri-add-line"></i> Añadir</button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop')"><span class="prod-fav"><i class="ri-heart-line"></i></span></div><div class="prod-body"><h4>Camiseta Algodón Orgánico</h4><p>100% orgánico · Unisex</p><div class="prod-bottom"><span class="prod-price">35€</span><button class="prod-add"><i class="ri-add-line"></i> Añadir</button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=400&h=500&fit=crop')"><span class="prod-tag">-20%</span><span class="prod-fav"><i class="ri-heart-line"></i></span></div><div class="prod-body"><h4>Bolso Rafia Ibiza</h4><p>Artesanal · Hecho a mano</p><div class="prod-bottom"><span class="prod-price">45€</span><button class="prod-add"><i class="ri-add-line"></i> Añadir</button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=500&fit=crop')"><span class="prod-fav"><i class="ri-heart-line"></i></span></div><div class="prod-body"><h4>Sandalias Esparto</h4><p>Piel natural · Nums 36-42</p><div class="prod-bottom"><span class="prod-price">59€</span><button class="prod-add"><i class="ri-add-line"></i> Añadir</button></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="promo" id="promo">
+    <div class="container">
+        <div class="promo-card">
+            <h3>10% en tu primera compra</h3>
+            <p>Usa el código en el checkout y disfruta de un descuento de bienvenida.</p>
+            <div class="promo-code">ISLA10</div><br>
+            <a href="#productos" class="btn btn-primary"><i class="ri-shopping-bag-line"></i> Comprar ahora</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container"><div class="feat-grid">
+        <div class="feat-item"><i class="ri-truck-line"></i><h4>Envío gratuito</h4><p>Pedidos +60€ a toda España</p></div>
+        <div class="feat-item"><i class="ri-refresh-line"></i><h4>Devoluciones fáciles</h4><p>30 días para cambiar o devolver</p></div>
+        <div class="feat-item"><i class="ri-shield-check-line"></i><h4>Pago seguro</h4><p>Tarjeta, PayPal, Bizum</p></div>
+        <div class="feat-item"><i class="ri-leaf-line"></i><h4>Sostenible</h4><p>Materiales naturales y éticos</p></div>
+    </div></div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-store-3-line"></i> Isla Boutique</p>
+    <p class="footer-copy">© 2026 Isla Boutique — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner">
+    <i class="ri-information-line"></i> Demo representativa del sector comercio —
+    <a href="../../comercio.html">Volver al sector</a>
+</div>
+
+</body>
+</html>

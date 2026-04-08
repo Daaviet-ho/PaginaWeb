@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Studio — Centro de belleza y entrenamiento en Ibiza</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#e8a0b4;--primary-dark:#d4839a;--accent:#f5c6d0;--dark:#140e10;--darker:#0e090b;--card:#1c1418;--text:#b89aa8;--white:#fff;--radius:12px;--font-heading:'DM Serif Display',serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(14,9,11,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,160,180,0.08)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.4rem;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--darker);padding:10px 24px;border-radius:50px;font-weight:700;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:radial-gradient(ellipse at 50% 20%,rgba(232,160,180,0.06),transparent 60%),linear-gradient(180deg,var(--darker),var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(232,160,180,0.1);border:1px solid rgba(232,160,180,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);font-weight:500;margin-bottom:22px}
+.hero h1{font-family:var(--font-heading);font-size:3.2rem;color:var(--white);line-height:1.15;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero p{font-size:1.05rem;max-width:520px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--darker)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.12)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+.section-label{text-align:center;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px}
+.section-sub{text-align:center;font-size:.9rem;margin-bottom:45px}
+
+.services{padding:80px 20px;background:var(--dark)}
+.serv-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:30px;flex-wrap:wrap}
+.serv-tab{padding:10px 22px;border-radius:50px;font-size:.85rem;font-weight:600;background:var(--card);color:var(--text);border:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:all .3s}
+.serv-tab.active{background:var(--primary);color:var(--darker);border-color:var(--primary)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.serv-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.serv-card:hover{transform:translateY(-5px)}
+.serv-img{height:200px;background-size:cover;background-position:center}
+.serv-body{padding:22px}
+.serv-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.15rem;margin-bottom:6px}
+.serv-body p{font-size:.85rem;margin-bottom:12px}
+.serv-meta{display:flex;justify-content:space-between;align-items:center}
+.serv-meta span{font-size:.82rem;display:flex;align-items:center;gap:4px}
+.serv-meta i{color:var(--primary)}
+.serv-price{font-family:var(--font-heading);font-size:1.4rem;color:var(--primary);font-weight:700}
+
+.gallery{padding:80px 20px;background:var(--darker)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal-item{border-radius:var(--radius);overflow:hidden;height:200px;background-size:cover;background-position:center;transition:transform .3s}
+.gal-item:hover{transform:scale(1.04)}
+.gal-item:first-child{grid-column:span 2;height:260px}
+.gal-item:last-child{grid-column:span 2;height:260px}
+
+.booking{padding:80px 20px;background:var(--dark)}
+.book-card{background:var(--card);border-radius:16px;padding:40px;max-width:650px;margin:0 auto;border:1px solid rgba(232,160,180,0.1)}
+.book-card h3{font-family:var(--font-heading);font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:8px}
+.book-card>p{text-align:center;font-size:.9rem;margin-bottom:28px}
+.book-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-full{grid-column:1/-1}
+.book-submit{grid-column:1/-1;margin-top:10px}
+.book-submit .btn{width:100%;justify-content:center}
+
+.reviews{padding:80px 20px;background:var(--darker)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.rev-card{background:var(--card);border-radius:var(--radius);padding:26px;border-top:3px solid var(--primary)}
+.rev-stars{color:var(--primary);font-size:1rem;margin-bottom:10px}
+.rev-card blockquote{font-style:italic;font-size:.9rem;margin-bottom:12px;color:rgba(255,255,255,0.7)}
+.rev-author{display:flex;align-items:center;gap:12px}
+.rev-avatar{width:40px;height:40px;border-radius:50%;background:rgba(232,160,180,0.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-weight:700}
+.rev-author h5{color:var(--white);font-size:.88rem;font-family:var(--font-heading)}
+.rev-author span{font-size:.78rem}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px}
+.footer-brand i{color:var(--primary)}
+.footer-socials{display:flex;justify-content:center;gap:16px;margin:12px 0}
+.footer-socials a{color:var(--text);font-size:1.2rem;transition:color .3s}
+.footer-socials a:hover{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--darker)}
+.demo-banner a{color:var(--darker);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.4rem}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:first-child,.gal-item:last-child{grid-column:span 1;height:200px}.book-form{grid-template-columns:1fr}}
+@media(max-width:480px){.gal-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-sparkling-2-line"></i> Glow Studio</a>
+    <div class="nav-links"><a href="#servicios">Servicios</a><a href="#galeria">Galería</a><a href="#opiniones">Opiniones</a><a href="#reservar" class="nav-cta">Reservar</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-sparkling-line"></i> Belleza, fitness y cuidado personal</div>
+        <h1>Tu mejor versión empieza <span>aquí</span></h1>
+        <p>Centro de belleza y entrenamiento personal en Ibiza. Peluquería, estética, maquillaje, fitness y nutrición en un solo espacio.</p>
+        <div class="hero-btns"><a href="#reservar" class="btn btn-primary"><i class="ri-calendar-check-line"></i> Reservar cita</a><a href="#servicios" class="btn btn-outline"><i class="ri-heart-line"></i> Ver servicios</a></div>
+    </div>
+</section>
+
+<section class="services" id="servicios">
+    <div class="container">
+        <p class="section-label">Servicios</p>
+        <h2 class="section-title">Todo lo que necesitas</h2>
+        <p class="section-sub">Belleza, bienestar y deporte bajo un mismo techo.</p>
+        <div class="serv-tabs"><span class="serv-tab active">Todos</span><span class="serv-tab">Peluquería</span><span class="serv-tab">Estética</span><span class="serv-tab">Fitness</span><span class="serv-tab">Nutrición</span></div>
+        <div class="serv-grid">
+            <div class="serv-card"><div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop')"></div><div class="serv-body"><h4>Corte & Peinado</h4><p>Corte personalizado, lavado, peinado y styling. Asesoramiento de imagen incluido.</p><div class="serv-meta"><span><i class="ri-time-line"></i> 45 min</span><span class="serv-price">35€</span></div></div></div>
+            <div class="serv-card"><div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop')"></div><div class="serv-body"><h4>Coloración Premium</h4><p>Balayage, mechas, tinte global con productos de alta gama. Sin amoniaco.</p><div class="serv-meta"><span><i class="ri-time-line"></i> 90 min</span><span class="serv-price">80€</span></div></div></div>
+            <div class="serv-card"><div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop')"></div><div class="serv-body"><h4>Tratamiento Facial</h4><p>Limpieza profunda, hidratación, vitamina C y masaje facial rejuvenecedor.</p><div class="serv-meta"><span><i class="ri-time-line"></i> 60 min</span><span class="serv-price">55€</span></div></div></div>
+            <div class="serv-card"><div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop')"></div><div class="serv-body"><h4>Entrenamiento Personal</h4><p>Sesiones 1:1 adaptadas a tus objetivos. Fuerza, cardio, movilidad y flexibilidad.</p><div class="serv-meta"><span><i class="ri-time-line"></i> 60 min</span><span class="serv-price">40€</span></div></div></div>
+            <div class="serv-card"><div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop')"></div><div class="serv-body"><h4>Maquillaje Profesional</h4><p>Maquillaje para eventos, bodas, sesiones fotográficas o día a día con asesoría.</p><div class="serv-meta"><span><i class="ri-time-line"></i> 50 min</span><span class="serv-price">45€</span></div></div></div>
+            <div class="serv-card"><div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop')"></div><div class="serv-body"><h4>Plan Nutricional</h4><p>Consulta individualizada + plan dietético personalizado de 4 semanas.</p><div class="serv-meta"><span><i class="ri-time-line"></i> 45 min</span><span class="serv-price">60€</span></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery" id="galeria">
+    <div class="container">
+        <p class="section-label">Galería</p>
+        <h2 class="section-title">Nuestro espacio</h2>
+        <p class="section-sub">Diseñado para que te sientas como en casa.</p>
+        <div class="gal-grid">
+            <div class="gal-item" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=500&fit=crop')"></div>
+            <div class="gal-item" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop')"></div>
+            <div class="gal-item" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop')"></div>
+            <div class="gal-item" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=400&fit=crop')"></div>
+            <div class="gal-item" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=500&fit=crop')"></div>
+        </div>
+    </div>
+</section>
+
+<section class="booking" id="reservar">
+    <div class="container">
+        <div class="book-card">
+            <h3>Reserva tu cita</h3>
+            <p>Elige el servicio que necesitas y reserva en segundos.</p>
+            <div class="book-form">
+                <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group"><label>Servicio</label><select><option>Corte & Peinado — 35€</option><option>Coloración Premium — 80€</option><option>Tratamiento Facial — 55€</option><option>Entrenamiento Personal — 40€</option><option>Maquillaje Profesional — 45€</option><option>Plan Nutricional — 60€</option></select></div>
+                <div class="form-group"><label>Fecha preferida</label><input type="date"></div>
+                <div class="form-group form-full"><label>Notas</label><textarea rows="2" placeholder="Preferencias, hora, etc."></textarea></div>
+                <div class="book-submit"><button class="btn btn-primary"><i class="ri-calendar-check-line"></i> Reservar cita</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reviews" id="opiniones">
+    <div class="container">
+        <p class="section-label">Opiniones</p>
+        <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+        <div class="rev-grid">
+            <div class="rev-card"><div class="rev-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><blockquote>"El mejor centro de belleza de Ibiza. El equipo es increíble y el resultado siempre supera mis expectativas."</blockquote><div class="rev-author"><div class="rev-avatar">A</div><div><h5>Ana C.</h5><span>Coloración Premium</span></div></div></div>
+            <div class="rev-card"><div class="rev-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><blockquote>"Las sesiones de entrenamiento personal me han cambiado la vida. Carlos es un profesional excepcional y te motiva mucho."</blockquote><div class="rev-author"><div class="rev-avatar">M</div><div><h5>Marco R.</h5><span>Entrenamiento Personal</span></div></div></div>
+            <div class="rev-card"><div class="rev-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div><blockquote>"Me hicieron el maquillaje para mi boda y quedó perfecto. Todo el mundo me preguntó dónde había ido. ¡Volveré seguro!"</blockquote><div class="rev-author"><div class="rev-avatar">P</div><div><h5>Patricia L.</h5><span>Maquillaje Profesional</span></div></div></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-sparkling-2-line"></i> Glow Studio</p>
+    <div class="footer-socials"><a href="#"><i class="ri-instagram-line"></i></a><a href="#"><i class="ri-tiktok-line"></i></a><a href="#"><i class="ri-whatsapp-line"></i></a></div>
+    <p class="footer-copy">© 2026 Glow Studio — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector servicios personales — <a href="../../personales.html">Volver al sector</a></div>
+
+</body>
+</html>

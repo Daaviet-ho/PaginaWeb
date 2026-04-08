@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terra Ibiza — Productos ecológicos de la isla</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#27ae60;--primary-dark:#1e8449;--accent:#82e0aa;--dark:#0a110a;--darker:#060c06;--card:#101a10;--text:#7ca882;--white:#fff;--radius:12px;--font-heading:'DM Serif Display',serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(6,12,6,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(39,174,96,0.08)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.4rem;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary);font-size:1.3rem}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--white);padding:10px 24px;border-radius:50px;font-weight:700;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:radial-gradient(ellipse at 50% 20%,rgba(39,174,96,0.06),transparent 60%),linear-gradient(180deg,var(--darker),var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(39,174,96,0.12);border:1px solid rgba(39,174,96,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);font-weight:600;margin-bottom:22px}
+.hero h1{font-family:var(--font-heading);font-size:3.2rem;color:var(--white);line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero p{font-size:1.05rem;max-width:520px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.12)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:45px}
+.hero-stat{text-align:center}
+.hero-stat strong{display:block;font-family:var(--font-heading);font-size:2rem;color:var(--white)}
+.hero-stat span{font-size:.8rem}
+
+.section-label{text-align:center;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px}
+.section-sub{text-align:center;font-size:.9rem;margin-bottom:45px}
+
+.products{padding:80px 20px;background:var(--dark)}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.prod-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.prod-card:hover{transform:translateY(-5px)}
+.prod-img{height:200px;background-size:cover;background-position:center;position:relative}
+.prod-badge{position:absolute;top:12px;left:12px;background:var(--primary);color:var(--white);padding:4px 12px;border-radius:50px;font-size:.72rem;font-weight:700}
+.prod-body{padding:18px}
+.prod-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:4px}
+.prod-body p{font-size:.82rem;margin-bottom:10px}
+.prod-footer{display:flex;justify-content:space-between;align-items:center}
+.prod-price{font-family:var(--font-heading);font-size:1.3rem;color:var(--primary)}
+.prod-unit{font-size:.75rem;color:var(--text)}
+.prod-cart{width:36px;height:36px;background:var(--primary);border:none;border-radius:50%;color:var(--white);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.prod-cart:hover{background:var(--primary-dark)}
+
+.story{padding:80px 20px;background:var(--darker)}
+.story-content{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.story-img{border-radius:var(--radius);height:360px;background-size:cover;background-position:center}
+.story-text h2{font-family:var(--font-heading);font-size:2rem;color:var(--white);margin-bottom:16px}
+.story-text p{font-size:.9rem;margin-bottom:14px}
+.story-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.story-val{display:flex;align-items:center;gap:8px;font-size:.85rem}
+.story-val i{color:var(--primary);font-size:1.1rem}
+
+.seasonal{padding:80px 20px;background:var(--dark)}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.season-card{background:var(--card);border-radius:var(--radius);padding:24px;text-align:center;border:1px solid rgba(39,174,96,0.08);transition:border-color .3s}
+.season-card:hover{border-color:var(--primary)}
+.season-icon{font-size:2rem;margin-bottom:10px}
+.season-card h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:6px}
+.season-card p{font-size:.82rem}
+.season-list{list-style:none;margin-top:10px;font-size:.8rem}
+.season-list li{padding:3px 0;display:flex;align-items:center;gap:4px;justify-content:center}
+.season-list li i{color:var(--primary);font-size:.75rem}
+
+.subscribe{padding:80px 20px;background:var(--darker)}
+.sub-box{background:linear-gradient(135deg,rgba(39,174,96,0.12),rgba(130,224,170,0.06));border:1px solid rgba(39,174,96,0.15);border-radius:20px;padding:50px 40px;text-align:center;max-width:650px;margin:0 auto}
+.sub-box h2{font-family:var(--font-heading);font-size:2rem;color:var(--white);margin-bottom:12px}
+.sub-box p{font-size:.9rem;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto}
+.sub-form{display:flex;gap:10px;max-width:420px;margin:0 auto}
+.sub-form input{flex:1;background:var(--card);border:1px solid rgba(255,255,255,0.08);padding:14px 18px;border-radius:50px;color:var(--white);font-family:var(--font-body);font-size:.9rem}
+.sub-form input:focus{outline:none;border-color:var(--primary)}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--white)}
+.demo-banner a{color:var(--white);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.hero-stats{flex-direction:column;gap:16px}.story-content{grid-template-columns:1fr}.story-img{height:260px}.season-grid{grid-template-columns:1fr 1fr}.sub-form{flex-direction:column}}
+@media(max-width:480px){.season-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-plant-line"></i> Terra Ibiza</a>
+    <div class="nav-links"><a href="#productos">Productos</a><a href="#historia">Nuestra historia</a><a href="#temporada">Temporada</a><a href="#suscripcion" class="nav-cta"><i class="ri-shopping-basket-line"></i> Cesta</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-seedling-line"></i> Agricultura ecológica certificada</div>
+        <h1>Del campo ibicenco a <span>tu mesa</span></h1>
+        <p>Productos ecológicos cultivados con amor en la isla. Frutas, verduras, aceites y conservas artesanales con denominación de origen.</p>
+        <div class="hero-btns"><a href="#productos" class="btn btn-primary"><i class="ri-shopping-basket-line"></i> Ver productos</a><a href="#historia" class="btn btn-outline"><i class="ri-film-line"></i> Nuestra historia</a></div>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong>12 Ha</strong><span>de cultivo ecológico</span></div>
+            <div class="hero-stat"><strong>100%</strong><span>orgánico certificado</span></div>
+            <div class="hero-stat"><strong>24h</strong><span>del campo a tu puerta</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="products" id="productos">
+    <div class="container">
+        <p class="section-label">Productos</p>
+        <h2 class="section-title">Nuestra cosecha</h2>
+        <p class="section-sub">Productos frescos de temporada, cultivados sin pesticidas.</p>
+        <div class="prod-grid">
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1474979266404-7eaacdc84c94?w=400&h=400&fit=crop')"><span class="prod-badge">Temporada</span></div><div class="prod-body"><h4>Aceite virgen extra</h4><p>Oliva arbequina de fincas ibicencas. Prensado en frío.</p><div class="prod-footer"><div><span class="prod-price">14,90€</span><span class="prod-unit"> / 500ml</span></div><button class="prod-cart"><i class="ri-add-line"></i></button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop')"></div><div class="prod-body"><h4>Tomates de rama</h4><p>Variedad local, madurados al sol mediterráneo.</p><div class="prod-footer"><div><span class="prod-price">4,50€</span><span class="prod-unit"> / kg</span></div><button class="prod-cart"><i class="ri-add-line"></i></button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop')"><span class="prod-badge">Nuevo</span></div><div class="prod-body"><h4>Miel de romero</h4><p>Miel cruda artesanal de apicultura ecológica local.</p><div class="prod-footer"><div><span class="prod-price">9,90€</span><span class="prod-unit"> / 350g</span></div><button class="prod-cart"><i class="ri-add-line"></i></button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1601004890684-d8573e10d0c0?w=400&h=400&fit=crop')"></div><div class="prod-body"><h4>Naranjas ecológicas</h4><p>Dulces y jugosas, recogidas a mano. Sin tratamientos.</p><div class="prod-footer"><div><span class="prod-price">3,80€</span><span class="prod-unit"> / kg</span></div><button class="prod-cart"><i class="ri-add-line"></i></button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop')"></div><div class="prod-body"><h4>Hierbas ibicencas</h4><p>Licor tradicional elaborado con hierbas aromáticas de la isla.</p><div class="prod-footer"><div><span class="prod-price">18,50€</span><span class="prod-unit"> / 70cl</span></div><button class="prod-cart"><i class="ri-add-line"></i></button></div></div></div>
+            <div class="prod-card"><div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop')"></div><div class="prod-body"><h4>Almendras tostadas</h4><p>Almendras de variedades autóctonas, tostadas al horno.</p><div class="prod-footer"><div><span class="prod-price">7,20€</span><span class="prod-unit"> / 250g</span></div><button class="prod-cart"><i class="ri-add-line"></i></button></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="story" id="historia">
+    <div class="container">
+        <div class="story-content">
+            <div class="story-img" style="background-image:url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=700&h=500&fit=crop')"></div>
+            <div class="story-text">
+                <p class="section-label" style="text-align:left">Nuestra historia</p>
+                <h2>Tres generaciones cultivando la tierra ibicenca</h2>
+                <p>Desde 1968, la familia Torres trabaja estas tierras con pasión y respeto por el medioambiente. Lo que empezó como una pequeña huerta familiar hoy es una finca ecológica de referencia en Baleares.</p>
+                <p>Cultivamos más de 40 variedades de frutas, verduras y hierbas aromáticas, respetando los ciclos naturales y la biodiversidad de la isla.</p>
+                <div class="story-values">
+                    <div class="story-val"><i class="ri-check-double-line"></i> 100% ecológico</div>
+                    <div class="story-val"><i class="ri-check-double-line"></i> Km0 garantizado</div>
+                    <div class="story-val"><i class="ri-check-double-line"></i> Sin plásticos</div>
+                    <div class="story-val"><i class="ri-check-double-line"></i> Envío en 24h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="seasonal" id="temporada">
+    <div class="container">
+        <p class="section-label">Calendario</p>
+        <h2 class="section-title">Productos de temporada</h2>
+        <p class="section-sub">Cada estación ofrece los sabores que la tierra nos regala.</p>
+        <div class="season-grid">
+            <div class="season-card"><div class="season-icon">🌸</div><h4>Primavera</h4><p>Mar — May</p><ul class="season-list"><li><i class="ri-check-line"></i> Fresas</li><li><i class="ri-check-line"></i> Alcachofas</li><li><i class="ri-check-line"></i> Habas</li></ul></div>
+            <div class="season-card"><div class="season-icon">☀️</div><h4>Verano</h4><p>Jun — Ago</p><ul class="season-list"><li><i class="ri-check-line"></i> Tomates</li><li><i class="ri-check-line"></i> Sandías</li><li><i class="ri-check-line"></i> Pimientos</li></ul></div>
+            <div class="season-card"><div class="season-icon">🍂</div><h4>Otoño</h4><p>Sep — Nov</p><ul class="season-list"><li><i class="ri-check-line"></i> Almendras</li><li><i class="ri-check-line"></i> Higos</li><li><i class="ri-check-line"></i> Granadas</li></ul></div>
+            <div class="season-card"><div class="season-icon">❄️</div><h4>Invierno</h4><p>Dic — Feb</p><ul class="season-list"><li><i class="ri-check-line"></i> Naranjas</li><li><i class="ri-check-line"></i> Aceitunas</li><li><i class="ri-check-line"></i> Col rizada</li></ul></div>
+        </div>
+    </div>
+</section>
+
+<section class="subscribe" id="suscripcion">
+    <div class="container">
+        <div class="sub-box">
+            <h2>Cesta semanal ecológica</h2>
+            <p>Recibe cada semana una selección de productos frescos de temporada directamente en tu puerta. Desde 19,90€/semana.</p>
+            <div class="sub-form"><input type="email" placeholder="tu@email.com"><button class="btn btn-primary">Suscribirme</button></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-plant-line"></i> Terra Ibiza</p>
+    <p class="footer-copy">© 2026 Terra Ibiza — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector agricultura — <a href="../../agricultura.html">Volver al sector</a></div>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Brasa de Ibiza — Cocina mediterránea de autor</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#ff5733;--primary-dark:#cc4529;--warm:#f0a500;--dark:#1a0f0a;--darker:#120b07;--card:#2a1a12;--card-light:#3a2518;--text:#d4c4b8;--white:#fff;--radius:10px;--font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(18,11,7,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,87,51,0.1)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--white);padding:10px 24px;border-radius:50px;font-weight:600;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:linear-gradient(180deg,var(--darker),#2a1510,var(--dark));position:relative}
+.hero::before{content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,87,51,0.06),transparent 70%);border-radius:50%}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,87,51,0.1);border:1px solid rgba(255,87,51,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);margin-bottom:22px;font-weight:500}
+.hero h1{font-family:var(--font-heading);font-size:3.8rem;font-weight:700;color:var(--white);line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero-sub{font-size:1.1rem;max-width:520px;margin:0 auto 32px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.15)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-hours{margin-top:40px;font-size:.85rem;color:var(--text)}
+.hero-hours i{color:var(--warm);margin-right:4px}
+
+.menu{padding:80px 20px;background:var(--dark)}
+.section-label{text-align:center;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.4rem;color:var(--white);margin-bottom:14px}
+.section-sub{text-align:center;font-size:.92rem;color:var(--text);margin-bottom:40px}
+.menu-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.menu-tab{background:var(--card);color:var(--text);padding:10px 22px;border-radius:50px;font-size:.85rem;font-weight:500;cursor:pointer;border:1px solid transparent;transition:all .3s}
+.menu-tab.active,.menu-tab:hover{border-color:var(--primary);color:var(--primary);background:rgba(255,87,51,0.08)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:18px}
+.menu-item{display:flex;align-items:center;gap:18px;background:var(--card);padding:18px 20px;border-radius:var(--radius);transition:transform .3s}
+.menu-item:hover{transform:translateX(4px)}
+.menu-item-img{width:70px;height:70px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.menu-item-info{flex:1}
+.menu-item-info h4{font-family:var(--font-heading);font-size:1.1rem;color:var(--white);margin-bottom:4px}
+.menu-item-info p{font-size:.8rem;color:var(--text)}
+.menu-item-price{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:var(--primary);flex-shrink:0}
+
+.gallery{padding:80px 20px;background:var(--darker)}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal-grid img{width:100%;height:220px;object-fit:cover;border-radius:var(--radius);transition:transform .4s}
+.gal-grid img:hover{transform:scale(1.03)}
+
+.reserve{padding:80px 20px;background:var(--dark)}
+.reserve-card{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(255,87,51,0.1)}
+.reserve-card h3{font-family:var(--font-heading);font-size:1.8rem;color:var(--white);text-align:center;margin-bottom:8px}
+.reserve-card>p{text-align:center;color:var(--text);font-size:.9rem;margin-bottom:28px}
+.reserve-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600;color:var(--text)}
+.form-group input,.form-group select{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary)}
+.reserve-submit{grid-column:1/-1;margin-top:10px}
+.reserve-submit .btn{width:100%;justify-content:center}
+
+.info-strip{padding:60px 20px;background:var(--darker)}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;text-align:center}
+.info-item i{font-size:2rem;color:var(--primary);margin-bottom:10px}
+.info-item h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:6px}
+.info-item p{font-size:.85rem;color:var(--text)}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--white)}
+.demo-banner a{color:var(--white);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.4rem}.menu-grid{grid-template-columns:1fr}.gal-grid{grid-template-columns:1fr 1fr}.reserve-form{grid-template-columns:1fr}}
+@media(max-width:480px){.gal-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-restaurant-2-line"></i> La Brasa de Ibiza</a>
+    <div class="nav-links"><a href="#carta">Carta</a><a href="#galeria">Galería</a><a href="#reservar">Reservar</a><a href="#reservar" class="nav-cta">Mesa ahora</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-fire-line"></i> Cocina de autor con alma mediterránea</div>
+        <h1>Sabores que <span>cuentan historias</span></h1>
+        <p class="hero-sub">Producto local de Ibiza cocinado con técnica y pasión. Terraza con vistas al mar, carta de temporada y una experiencia gastronómica inolvidable.</p>
+        <div class="hero-btns">
+            <a href="#carta" class="btn btn-primary"><i class="ri-book-open-line"></i> Ver carta</a>
+            <a href="#reservar" class="btn btn-outline"><i class="ri-calendar-line"></i> Reservar mesa</a>
+        </div>
+        <p class="hero-hours"><i class="ri-time-line"></i> Abierto de Mar a Dom · 13:00–16:00 / 20:00–00:00</p>
+    </div>
+</section>
+
+<section class="menu" id="carta">
+    <div class="container">
+        <p class="section-label">Nuestra carta</p>
+        <h2 class="section-title">Sabores de temporada</h2>
+        <p class="section-sub">Ingredientes km0, pescado fresco del día y carnes a la brasa.</p>
+        <div class="menu-tabs">
+            <span class="menu-tab active">Entrantes</span>
+            <span class="menu-tab">Principales</span>
+            <span class="menu-tab">Postres</span>
+            <span class="menu-tab">Cócteles</span>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item"><img class="menu-item-img" src="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=150&h=150&fit=crop" alt=""><div class="menu-item-info"><h4>Croquetas de Gambas</h4><p>Croquetas cremosas de gambas rojas con alioli suave</p></div><span class="menu-item-price">14€</span></div>
+            <div class="menu-item"><img class="menu-item-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=150&h=150&fit=crop" alt=""><div class="menu-item-info"><h4>Ensalada Payesa</h4><p>Ensalada ibicenca con pimiento, tomate seco y sobrasada crujiente</p></div><span class="menu-item-price">12€</span></div>
+            <div class="menu-item"><img class="menu-item-img" src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=150&h=150&fit=crop" alt=""><div class="menu-item-info"><h4>Pulpo a la Brasa</h4><p>Sobre crema de patata trufada con pimentón ahumado</p></div><span class="menu-item-price">22€</span></div>
+            <div class="menu-item"><img class="menu-item-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=150&h=150&fit=crop" alt=""><div class="menu-item-info"><h4>Tataki de Atún</h4><p>Atún rojo sellado con sésamo y salsa ponzu</p></div><span class="menu-item-price">19€</span></div>
+            <div class="menu-item"><img class="menu-item-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop" alt=""><div class="menu-item-info"><h4>Arroz Caldoso</h4><p>De bogavante con sofrito casero y azafrán de la isla</p></div><span class="menu-item-price">28€</span></div>
+            <div class="menu-item"><img class="menu-item-img" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=150&h=150&fit=crop" alt=""><div class="menu-item-info"><h4>Costillas Ibéricas</h4><p>Lacadas al horno de leña con miel de romero ibicenco</p></div><span class="menu-item-price">24€</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery" id="galeria">
+    <div class="container">
+        <p class="section-label">Nuestro espacio</p>
+        <h2 class="section-title">Un lugar especial</h2>
+        <div class="gal-grid">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop" alt="Interior">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop" alt="Plato">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=300&fit=crop" alt="Terraza">
+            <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=400&h=300&fit=crop" alt="Chef">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop" alt="Bar">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" alt="Detalle">
+        </div>
+    </div>
+</section>
+
+<section class="reserve" id="reservar">
+    <div class="container">
+        <div class="reserve-card">
+            <h3>Reserva tu mesa</h3>
+            <p>Confirma tu reserva al instante. Grupos de más de 8 consúltanos.</p>
+            <div class="reserve-form">
+                <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group"><label>Fecha</label><input type="date"></div>
+                <div class="form-group"><label>Hora</label><select><option>13:00</option><option>13:30</option><option>14:00</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option></select></div>
+                <div class="form-group"><label>Personas</label><select><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+                <div class="form-group"><label>Notas</label><input type="text" placeholder="Alergias, celebración..."></div>
+                <div class="reserve-submit"><button class="btn btn-primary"><i class="ri-check-line"></i> Confirmar reserva</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="info-strip">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-item"><i class="ri-map-pin-line"></i><h4>Ubicación</h4><p>Paseo Marítimo 42, Puerto de Ibiza</p></div>
+            <div class="info-item"><i class="ri-phone-line"></i><h4>Reservas</h4><p>+34 971 000 123</p></div>
+            <div class="info-item"><i class="ri-parking-box-line"></i><h4>Parking</h4><p>Parking concertado a 100m</p></div>
+            <div class="info-item"><i class="ri-wifi-line"></i><h4>WiFi</h4><p>WiFi gratuito para clientes</p></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-restaurant-2-line"></i> La Brasa de Ibiza</p>
+    <p class="footer-copy">© 2026 La Brasa de Ibiza — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner">
+    <i class="ri-information-line"></i> Demo representativa del sector restauración —
+    <a href="../../restauracion.html">Volver al sector</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Mediterránea — Salud integral en Ibiza</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#5dade2;--primary-dark:#3498db;--accent:#85c1e9;--dark:#0a0e14;--darker:#070a10;--card:#111720;--text:#8aa8c0;--white:#fff;--radius:12px;--font-heading:'DM Serif Display',serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(7,10,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(93,173,226,0.08)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--white);padding:10px 24px;border-radius:50px;font-weight:700;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:radial-gradient(ellipse at 50% 20%,rgba(93,173,226,0.06),transparent 60%),linear-gradient(180deg,var(--darker),var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(93,173,226,0.1);border:1px solid rgba(93,173,226,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);font-weight:600;margin-bottom:22px}
+.hero h1{font-family:var(--font-heading);font-size:3.2rem;color:var(--white);line-height:1.15;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero p{font-size:1.05rem;max-width:520px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.12)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-trust{display:flex;gap:30px;justify-content:center;margin-top:45px;font-size:.82rem}
+.hero-trust span{display:flex;align-items:center;gap:6px}
+.hero-trust i{color:var(--primary);font-size:1.1rem}
+
+.section-label{text-align:center;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px}
+.section-sub{text-align:center;font-size:.9rem;margin-bottom:45px}
+
+.specialties{padding:80px 20px;background:var(--dark)}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.spec-card{background:var(--card);border-radius:var(--radius);padding:28px 22px;text-align:center;border:1px solid rgba(93,173,226,0.06);transition:all .3s}
+.spec-card:hover{transform:translateY(-4px);border-color:rgba(93,173,226,0.2)}
+.spec-icon{width:56px;height:56px;margin:0 auto 14px;background:rgba(93,173,226,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--primary)}
+.spec-card h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:6px}
+.spec-card p{font-size:.82rem}
+
+.doctors{padding:80px 20px;background:var(--darker)}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.doc-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.doc-card:hover{transform:translateY(-4px)}
+.doc-img{height:260px;background-size:cover;background-position:center top}
+.doc-body{padding:18px}
+.doc-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:2px}
+.doc-body span{font-size:.8rem;color:var(--primary);display:block;margin-bottom:8px}
+.doc-body p{font-size:.82rem;margin-bottom:10px}
+.doc-avail{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--accent)}
+.doc-avail i{font-size:.6rem}
+
+.appointment{padding:80px 20px;background:var(--dark)}
+.appt-card{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(93,173,226,0.1)}
+.appt-card h3{font-family:var(--font-heading);font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:8px}
+.appt-card>p{text-align:center;font-size:.9rem;margin-bottom:28px}
+.appt-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-full{grid-column:1/-1}
+.appt-submit{grid-column:1/-1;margin-top:10px}
+.appt-submit .btn{width:100%;justify-content:center}
+
+.emergency{padding:60px 20px;background:var(--darker)}
+.emerg-box{background:linear-gradient(135deg,rgba(231,76,60,0.12),rgba(93,173,226,0.08));border:1px solid rgba(231,76,60,0.2);border-radius:16px;padding:30px;text-align:center;max-width:600px;margin:0 auto}
+.emerg-box h3{font-family:var(--font-heading);color:var(--white);font-size:1.4rem;margin-bottom:8px}
+.emerg-box p{font-size:.9rem;margin-bottom:16px}
+.emerg-phone{font-family:var(--font-heading);font-size:2rem;color:#e74c3c;display:flex;align-items:center;justify-content:center;gap:10px}
+.emerg-phone i{font-size:1.4rem}
+
+.info-strip{padding:60px 20px;background:var(--dark)}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.info-item{text-align:center}
+.info-item i{font-size:1.8rem;color:var(--primary);margin-bottom:10px}
+.info-item h4{font-family:var(--font-heading);color:var(--white);font-size:1rem;margin-bottom:4px}
+.info-item p{font-size:.82rem}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--white)}
+.demo-banner a{color:var(--white);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.hero-trust{flex-direction:column;gap:10px}.appt-form{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.info-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-heart-pulse-line"></i> Clínica Mediterránea</a>
+    <div class="nav-links"><a href="#especialidades">Especialidades</a><a href="#equipo">Equipo</a><a href="#cita">Pedir cita</a><a href="#cita" class="nav-cta">Cita online</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-shield-cross-line"></i> Centro médico de referencia en Ibiza</div>
+        <h1>Tu salud en <span>buenas manos</span></h1>
+        <p>Clínica multidisciplinar con más de 15 especialidades médicas. Tecnología avanzada, trato cercano y resultados excelentes.</p>
+        <div class="hero-btns"><a href="#cita" class="btn btn-primary"><i class="ri-calendar-check-line"></i> Pedir cita</a><a href="#especialidades" class="btn btn-outline"><i class="ri-stethoscope-line"></i> Especialidades</a></div>
+        <div class="hero-trust"><span><i class="ri-user-heart-line"></i> +8.000 pacientes</span><span><i class="ri-award-line"></i> 25 años</span><span><i class="ri-star-line"></i> 4.9 en Google</span></div>
+    </div>
+</section>
+
+<section class="specialties" id="especialidades">
+    <div class="container">
+        <p class="section-label">Especialidades</p>
+        <h2 class="section-title">Atención médica completa</h2>
+        <p class="section-sub">Más de 15 especialidades bajo el mismo techo.</p>
+        <div class="spec-grid">
+            <div class="spec-card"><div class="spec-icon"><i class="ri-heart-3-line"></i></div><h4>Cardiología</h4><p>Diagnóstico y tratamiento de enfermedades cardiovasculares.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-body-scan-line"></i></div><h4>Traumatología</h4><p>Lesiones óseas, articulares y musculares. Rehabilitación.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-eye-line"></i></div><h4>Oftalmología</h4><p>Cirugía láser, cataratas, revisiones completas de la vista.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-mental-health-line"></i></div><h4>Neurología</h4><p>Trastornos del sistema nervioso, cefaleas, epilepsia.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-lungs-line"></i></div><h4>Neumología</h4><p>Enfermedades respiratorias, asma, apnea del sueño.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-parent-line"></i></div><h4>Pediatría</h4><p>Atención integral desde el nacimiento hasta la adolescencia.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-psychotherapy-line"></i></div><h4>Dermatología</h4><p>Piel, pelo y uñas. Dermatología estética y clínica.</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="ri-flask-line"></i></div><h4>Análisis clínicos</h4><p>Laboratorio propio con resultados en 24 horas.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="doctors" id="equipo">
+    <div class="container">
+        <p class="section-label">Equipo médico</p>
+        <h2 class="section-title">Profesionales de confianza</h2>
+        <p class="section-sub">Médicos colegiados con amplia experiencia clínica.</p>
+        <div class="doc-grid">
+            <div class="doc-card"><div class="doc-img" style="background-image:url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop')"></div><div class="doc-body"><h4>Dr. Miguel Álvarez</h4><span>Cardiología</span><p>Cardiólogo intervencionista con 20 años de experiencia.</p><div class="doc-avail"><i class="ri-circle-fill"></i> Disponible esta semana</div></div></div>
+            <div class="doc-card"><div class="doc-img" style="background-image:url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop')"></div><div class="doc-body"><h4>Dra. Elena Ferrer</h4><span>Dermatología</span><p>Especialista en dermatología clínica y estética avanzada.</p><div class="doc-avail"><i class="ri-circle-fill"></i> Disponible esta semana</div></div></div>
+            <div class="doc-card"><div class="doc-img" style="background-image:url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop')"></div><div class="doc-body"><h4>Dr. Javier Ruiz</h4><span>Traumatología</span><p>Cirujano ortopédico, especializado en lesiones deportivas.</p><div class="doc-avail"><i class="ri-circle-fill"></i> Disponible la próxima semana</div></div></div>
+            <div class="doc-card"><div class="doc-img" style="background-image:url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop')"></div><div class="doc-body"><h4>Dra. Clara Navarro</h4><span>Pediatría</span><p>Pediatra con enfoque integral y formación en neonatología.</p><div class="doc-avail"><i class="ri-circle-fill"></i> Disponible esta semana</div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="appointment" id="cita">
+    <div class="container">
+        <div class="appt-card">
+            <h3>Pedir cita online</h3>
+            <p>Reserva tu consulta en segundos. Te confirmaremos por email o teléfono.</p>
+            <div class="appt-form">
+                <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group"><label>Especialidad</label><select><option>Cardiología</option><option>Traumatología</option><option>Oftalmología</option><option>Neurología</option><option>Dermatología</option><option>Pediatría</option><option>Neumología</option><option>Análisis clínicos</option></select></div>
+                <div class="form-group"><label>Fecha preferida</label><input type="date"></div>
+                <div class="form-group"><label>Médico preferido</label><select><option>Sin preferencia</option><option>Dr. Miguel Álvarez</option><option>Dra. Elena Ferrer</option><option>Dr. Javier Ruiz</option><option>Dra. Clara Navarro</option></select></div>
+                <div class="form-group"><label>Seguro médico</label><select><option>Privado — sin seguro</option><option>Adeslas</option><option>Sanitas</option><option>DKV</option><option>Mapfre Salud</option><option>Otro</option></select></div>
+                <div class="form-group form-full"><label>Motivo de consulta</label><textarea rows="2" placeholder="Describe brevemente tus síntomas o motivo de la visita..."></textarea></div>
+                <div class="appt-submit"><button class="btn btn-primary"><i class="ri-calendar-check-line"></i> Solicitar cita</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="emergency">
+    <div class="container">
+        <div class="emerg-box">
+            <h3>Urgencias 24 horas</h3>
+            <p>Nuestro servicio de urgencias está disponible las 24 horas del día, los 365 días del año.</p>
+            <div class="emerg-phone"><i class="ri-phone-fill"></i> 971 000 000</div>
+        </div>
+    </div>
+</section>
+
+<section class="info-strip">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-item"><i class="ri-map-pin-line"></i><h4>Ubicación</h4><p>Avda. España 42, Ibiza</p></div>
+            <div class="info-item"><i class="ri-time-line"></i><h4>Horario</h4><p>L-V: 8-20h · S: 9-14h</p></div>
+            <div class="info-item"><i class="ri-parking-box-line"></i><h4>Parking</h4><p>Parking propio gratuito</p></div>
+            <div class="info-item"><i class="ri-wheelchair-line"></i><h4>Accesibilidad</h4><p>100% accesible</p></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-heart-pulse-line"></i> Clínica Mediterránea</p>
+    <p class="footer-copy">© 2026 Clínica Mediterránea — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector salud — <a href="../../salud.html">Volver al sector</a></div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LogiPort — Logística inteligente en Baleares</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#95a5a6;--primary-dark:#7f8c8d;--accent:#bdc3c7;--dark:#0c0e10;--darker:#08090b;--card:#13151a;--text:#8a9098;--white:#fff;--radius:12px;--font-heading:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(8,9,11,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(149,165,166,0.08)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);font-weight:700;display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--dark);padding:10px 24px;border-radius:50px;font-weight:700;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:radial-gradient(ellipse at 50% 20%,rgba(149,165,166,0.05),transparent 60%),linear-gradient(180deg,var(--darker),var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(149,165,166,0.1);border:1px solid rgba(149,165,166,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);font-weight:600;margin-bottom:22px}
+.hero h1{font-family:var(--font-heading);font-size:3.2rem;color:var(--white);line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero p{font-size:1.05rem;max-width:540px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:700;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--dark)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.12)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:48px}
+.hero-stat{text-align:center}
+.hero-stat strong{display:block;font-family:var(--font-heading);font-size:2rem;color:var(--white)}
+.hero-stat span{font-size:.8rem}
+
+.section-label{text-align:center;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:12px}
+.section-sub{text-align:center;font-size:.9rem;margin-bottom:45px}
+
+.tracking{padding:80px 20px;background:var(--dark)}
+.track-box{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(149,165,166,0.1)}
+.track-box h3{font-family:var(--font-heading);font-size:1.5rem;color:var(--white);text-align:center;margin-bottom:8px}
+.track-box>p{text-align:center;font-size:.9rem;margin-bottom:24px}
+.track-input{display:flex;gap:10px}
+.track-input input{flex:1;background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:14px 18px;border-radius:50px;color:var(--white);font-family:var(--font-body);font-size:.9rem}
+.track-input input:focus{outline:none;border-color:var(--primary)}
+.track-result{margin-top:24px;background:var(--darker);border-radius:12px;padding:24px}
+.track-steps{position:relative;padding-left:30px}
+.track-step{position:relative;padding-bottom:24px}
+.track-step:last-child{padding-bottom:0}
+.track-step::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;background:var(--primary);border-radius:50%}
+.track-step::after{content:'';position:absolute;left:-17px;top:20px;width:1px;height:calc(100% - 14px);background:rgba(149,165,166,0.2)}
+.track-step:last-child::after{display:none}
+.track-step.done::before{background:var(--primary)}
+.track-step.pending::before{background:rgba(149,165,166,0.3)}
+.track-step h5{font-family:var(--font-heading);color:var(--white);font-size:.95rem;margin-bottom:2px}
+.track-step p{font-size:.8rem}
+.track-step time{font-size:.75rem;color:var(--primary)}
+
+.services{padding:80px 20px;background:var(--darker)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.serv-card{background:var(--card);border-radius:var(--radius);padding:28px 22px;text-align:center;border:1px solid rgba(149,165,166,0.06);transition:all .3s}
+.serv-card:hover{transform:translateY(-4px);border-color:rgba(149,165,166,0.2)}
+.serv-icon{width:56px;height:56px;margin:0 auto 14px;background:rgba(149,165,166,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--primary)}
+.serv-card h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:6px}
+.serv-card p{font-size:.82rem}
+
+.fleet{padding:80px 20px;background:var(--dark)}
+.fleet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.fleet-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.fleet-card:hover{transform:translateY(-4px)}
+.fleet-img{height:160px;background-size:cover;background-position:center}
+.fleet-body{padding:18px}
+.fleet-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:4px}
+.fleet-body p{font-size:.82rem;margin-bottom:10px}
+.fleet-specs{display:flex;gap:12px;font-size:.78rem;flex-wrap:wrap}
+.fleet-specs span{display:flex;align-items:center;gap:4px;background:rgba(149,165,166,0.1);padding:4px 10px;border-radius:50px}
+.fleet-specs i{color:var(--primary)}
+
+.quote{padding:80px 20px;background:var(--darker)}
+.quote-card{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(149,165,166,0.1)}
+.quote-card h3{font-family:var(--font-heading);font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:8px}
+.quote-card>p{text-align:center;font-size:.9rem;margin-bottom:28px}
+.quote-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-full{grid-column:1/-1}
+.quote-submit{grid-column:1/-1;margin-top:10px}
+.quote-submit .btn{width:100%;justify-content:center}
+
+.coverage{padding:60px 20px;background:var(--dark)}
+.cov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cov-item{text-align:center}
+.cov-item i{font-size:1.8rem;color:var(--primary);margin-bottom:10px}
+.cov-item h4{font-family:var(--font-heading);color:var(--white);font-size:1rem;margin-bottom:4px}
+.cov-item p{font-size:.82rem}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--dark)}
+.demo-banner a{color:var(--dark);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.hero-stats{flex-direction:column;gap:16px}.track-input{flex-direction:column}.quote-form{grid-template-columns:1fr}.cov-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cov-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-truck-line"></i> LogiPort</a>
+    <div class="nav-links"><a href="#tracking">Tracking</a><a href="#servicios">Servicios</a><a href="#flota">Flota</a><a href="#presupuesto" class="nav-cta">Pedir presupuesto</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-route-line"></i> Especialistas en logística insular</div>
+        <h1>Logística <span>sin fronteras</span> en Baleares</h1>
+        <p>Transporte de mercancías, almacenaje, distribución y logística inversa. Conectamos las islas con la península y Europa.</p>
+        <div class="hero-btns"><a href="#presupuesto" class="btn btn-primary"><i class="ri-file-list-3-line"></i> Pedir presupuesto</a><a href="#tracking" class="btn btn-outline"><i class="ri-map-pin-line"></i> Rastrear envío</a></div>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong>50K+</strong><span>Envíos anuales</span></div>
+            <div class="hero-stat"><strong>99.2%</strong><span>Entrega a tiempo</span></div>
+            <div class="hero-stat"><strong>24h</strong><span>Península → Ibiza</span></div>
+            <div class="hero-stat"><strong>48h</strong><span>Europa → Ibiza</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="tracking" id="tracking">
+    <div class="container">
+        <div class="track-box">
+            <h3>Rastrear envío</h3>
+            <p>Introduce tu número de seguimiento para ver el estado de tu envío.</p>
+            <div class="track-input"><input type="text" placeholder="Ej: LP-2026-000482"><button class="btn btn-primary"><i class="ri-search-line"></i> Rastrear</button></div>
+            <div class="track-result">
+                <div class="track-steps">
+                    <div class="track-step done"><time>15 Jul · 09:30</time><h5>Recogido en origen</h5><p>Almacén del cliente — Barcelona</p></div>
+                    <div class="track-step done"><time>15 Jul · 14:00</time><h5>En tránsito — Puerto de Barcelona</h5><p>Cargado en contenedor marítimo</p></div>
+                    <div class="track-step done"><time>16 Jul · 06:00</time><h5>En tránsito — Mar Mediterráneo</h5><p>Navegación hacia Puerto de Ibiza</p></div>
+                    <div class="track-step pending"><time>16 Jul · 12:00 (est.)</time><h5>Llegada a Puerto de Ibiza</h5><p>Pendiente de descarga y despacho</p></div>
+                    <div class="track-step pending"><time>16 Jul · 16:00 (est.)</time><h5>Entrega al destinatario</h5><p>Reparto en última milla</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="servicios">
+    <div class="container">
+        <p class="section-label">Servicios</p>
+        <h2 class="section-title">Soluciones logísticas completas</h2>
+        <p class="section-sub">Todo lo que necesitas para mover tus mercancías.</p>
+        <div class="serv-grid">
+            <div class="serv-card"><div class="serv-icon"><i class="ri-ship-line"></i></div><h4>Transporte marítimo</h4><p>Contenedores y grupaje entre península, Baleares y puertos europeos.</p></div>
+            <div class="serv-card"><div class="serv-icon"><i class="ri-truck-line"></i></div><h4>Transporte terrestre</h4><p>Reparto en isla con flota propia. Última milla y distribución urbana.</p></div>
+            <div class="serv-card"><div class="serv-icon"><i class="ri-building-4-line"></i></div><h4>Almacenaje</h4><p>3.000 m² de almacén logístico con gestión de stock y picking.</p></div>
+            <div class="serv-card"><div class="serv-icon"><i class="ri-restart-line"></i></div><h4>Logística inversa</h4><p>Gestión de devoluciones, reciclaje y reacondicionamiento.</p></div>
+            <div class="serv-card"><div class="serv-icon"><i class="ri-file-paper-2-line"></i></div><h4>Aduanas</h4><p>Gestión de documentación para importación/exportación.</p></div>
+            <div class="serv-card"><div class="serv-icon"><i class="ri-timer-flash-line"></i></div><h4>Express 24h</h4><p>Servicio urgente con entrega garantizada al día siguiente.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="fleet" id="flota">
+    <div class="container">
+        <p class="section-label">Flota</p>
+        <h2 class="section-title">Vehículos y equipamiento</h2>
+        <p class="section-sub">Flota moderna adaptada a cada tipo de carga.</p>
+        <div class="fleet-grid">
+            <div class="fleet-card"><div class="fleet-img" style="background-image:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=300&fit=crop')"></div><div class="fleet-body"><h4>Furgoneta urbana</h4><p>Reparto de paquetería y documentación en zona urbana.</p><div class="fleet-specs"><span><i class="ri-box-3-line"></i> 12 m³</span><span><i class="ri-weight-line"></i> 1.200 kg</span></div></div></div>
+            <div class="fleet-card"><div class="fleet-img" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop')"></div><div class="fleet-body"><h4>Camión rígido</h4><p>Distribución de mercancías medianas y palets.</p><div class="fleet-specs"><span><i class="ri-box-3-line"></i> 40 m³</span><span><i class="ri-weight-line"></i> 8.000 kg</span></div></div></div>
+            <div class="fleet-card"><div class="fleet-img" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=400&h=300&fit=crop')"></div><div class="fleet-body"><h4>Tráiler</h4><p>Transporte de grandes volúmenes hasta el puerto.</p><div class="fleet-specs"><span><i class="ri-box-3-line"></i> 90 m³</span><span><i class="ri-weight-line"></i> 24.000 kg</span></div></div></div>
+            <div class="fleet-card"><div class="fleet-img" style="background-image:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=400&h=300&fit=crop')"></div><div class="fleet-body"><h4>Frigorífico</h4><p>Transporte con temperatura controlada para alimentación y farmacia.</p><div class="fleet-specs"><span><i class="ri-temp-cold-line"></i> -20°C a 5°C</span><span><i class="ri-weight-line"></i> 5.000 kg</span></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="quote" id="presupuesto">
+    <div class="container">
+        <div class="quote-card">
+            <h3>Solicitar presupuesto</h3>
+            <p>Cuéntanos qué necesitas mover y te haremos una propuesta en 24h.</p>
+            <div class="quote-form">
+                <div class="form-group"><label>Empresa</label><input type="text" placeholder="Nombre de tu empresa"></div>
+                <div class="form-group"><label>Contacto</label><input type="text" placeholder="Persona de contacto"></div>
+                <div class="form-group"><label>Email</label><input type="email" placeholder="email@empresa.com"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group"><label>Tipo de servicio</label><select><option>Transporte marítimo</option><option>Transporte terrestre</option><option>Almacenaje</option><option>Express 24h</option><option>Logística inversa</option><option>Servicio completo</option></select></div>
+                <div class="form-group"><label>Origen — Destino</label><input type="text" placeholder="Ej: Barcelona → Ibiza"></div>
+                <div class="form-group form-full"><label>Detalle de la mercancía</label><textarea rows="3" placeholder="Tipo de mercancía, peso, volumen, palets, frecuencia..."></textarea></div>
+                <div class="quote-submit"><button class="btn btn-primary"><i class="ri-send-plane-line"></i> Solicitar presupuesto</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="coverage">
+    <div class="container">
+        <div class="cov-grid">
+            <div class="cov-item"><i class="ri-map-pin-line"></i><h4>Cobertura total</h4><p>Ibiza, Formentera, Mallorca, Menorca</p></div>
+            <div class="cov-item"><i class="ri-global-line"></i><h4>Conexión europea</h4><p>España, Francia, Alemania, Italia, Portugal</p></div>
+            <div class="cov-item"><i class="ri-shield-check-line"></i><h4>Seguro incluido</h4><p>Toda la mercancía asegurada A.T.R.</p></div>
+            <div class="cov-item"><i class="ri-customer-service-line"></i><h4>Atención 24/7</h4><p>Servicio de atención y emergencias</p></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-truck-line"></i> LogiPort</p>
+    <p class="footer-copy">© 2026 LogiPort — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector logística — <a href="../../logistica.html">Volver al sector</a></div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mediterránea Obras — Construcción e inmobiliaria en Ibiza</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#d4a017;--primary-dark:#b8900f;--accent:#8d6e12;--dark:#14120a;--darker:#0e0c06;--card:#231f10;--text:#c8c0a8;--white:#fff;--radius:10px;--font-heading:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--darker);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(14,12,6,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,23,0.1)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-brand i{color:var(--primary)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--dark);padding:10px 24px;border-radius:50px;font-weight:600;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:120px 20px 80px;background:linear-gradient(180deg,var(--darker),#1a1608,var(--dark))}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.2);padding:8px 18px;border-radius:50px;font-size:.78rem;color:var(--primary);margin-bottom:22px;font-weight:500}
+.hero h1{font-family:var(--font-heading);font-size:3.4rem;font-weight:700;color:var(--white);line-height:1.15;margin-bottom:18px}
+.hero h1 span{color:var(--primary)}
+.hero-sub{font-size:1.05rem;max-width:540px;margin:0 auto 32px}
+.btn{padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--dark)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.15)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:50px}
+.hero-stat-num{font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--white)}
+.hero-stat-label{font-size:.8rem;color:var(--text)}
+
+.section-label{text-align:center;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:8px}
+.section-title{text-align:center;font-family:var(--font-heading);font-size:2.2rem;color:var(--white);margin-bottom:40px}
+
+/* Projects */
+.projects{padding:80px 20px;background:var(--dark)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
+.proj-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.proj-card:hover{transform:translateY(-5px)}
+.proj-img{height:220px;background-size:cover;background-position:center;position:relative}
+.proj-badge{position:absolute;top:14px;left:14px;background:var(--primary);color:var(--dark);font-size:.7rem;font-weight:700;padding:4px 14px;border-radius:20px}
+.proj-body{padding:20px}
+.proj-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.1rem;margin-bottom:6px}
+.proj-body p{font-size:.85rem;margin-bottom:12px}
+.proj-specs{display:flex;gap:14px;font-size:.78rem;color:var(--text)}
+.proj-specs span{display:flex;align-items:center;gap:4px}
+.proj-specs i{color:var(--primary)}
+
+/* Properties */
+.properties{padding:80px 20px;background:var(--darker)}
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.prop-card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:transform .3s}
+.prop-card:hover{transform:translateY(-4px)}
+.prop-img{height:200px;background-size:cover;background-position:center;position:relative}
+.prop-tag{position:absolute;top:12px;right:12px;background:rgba(26,188,156,0.9);color:var(--white);font-size:.7rem;font-weight:700;padding:4px 14px;border-radius:20px}
+.prop-body{padding:20px}
+.prop-body h4{font-family:var(--font-heading);color:var(--white);font-size:1.05rem;margin-bottom:4px}
+.prop-body .prop-loc{font-size:.8rem;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:4px}
+.prop-body .prop-loc i{color:var(--primary)}
+.prop-details{display:flex;gap:16px;font-size:.78rem;color:var(--text);margin-bottom:14px}
+.prop-details span{display:flex;align-items:center;gap:4px}
+.prop-details i{color:var(--primary)}
+.prop-price{font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--primary)}
+
+/* Services */
+.services{padding:80px 20px;background:var(--dark)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;text-align:center}
+.serv-card{background:var(--card);padding:30px 20px;border-radius:var(--radius);border-top:3px solid var(--primary);transition:transform .3s}
+.serv-card:hover{transform:translateY(-4px)}
+.serv-card i{font-size:2rem;color:var(--primary);margin-bottom:14px}
+.serv-card h4{font-family:var(--font-heading);color:var(--white);font-size:1rem;margin-bottom:8px}
+.serv-card p{font-size:.85rem}
+
+.contact{padding:80px 20px;background:var(--darker)}
+.contact-card{background:var(--card);border-radius:16px;padding:40px;max-width:700px;margin:0 auto;border:1px solid rgba(212,160,23,0.1)}
+.contact-card h3{font-family:var(--font-heading);font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:8px}
+.contact-card>p{text-align:center;font-size:.9rem;margin-bottom:28px}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.8rem;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{background:var(--darker);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:.9rem;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-full{grid-column:1/-1}
+.contact-submit{grid-column:1/-1;margin-top:10px}
+.contact-submit .btn{width:100%;justify-content:center}
+
+.footer{padding:40px 20px;background:var(--darker);border-top:1px solid rgba(255,255,255,0.04);text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:10px}
+.footer-brand i{color:var(--primary)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.3)}
+
+.demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.85rem;font-weight:500;color:var(--dark)}
+.demo-banner a{color:var(--dark);font-weight:700;text-decoration:underline}
+
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:block}.hero h1{font-size:2.2rem}.hero-stats{flex-direction:column;gap:20px}.contact-form{grid-template-columns:1fr}.proj-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="container">
+    <a href="#" class="nav-brand"><i class="ri-building-4-line"></i> Mediterránea Obras</a>
+    <div class="nav-links"><a href="#proyectos">Proyectos</a><a href="#inmuebles">Inmuebles</a><a href="#servicios">Servicios</a><a href="#contacto" class="nav-cta">Presupuesto</a></div>
+    <button class="nav-toggle"><i class="ri-menu-line"></i></button>
+</div></nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag"><i class="ri-award-line"></i> 15 años construyendo en Ibiza</div>
+        <h1>Construimos el hogar <span>de tus sueños</span></h1>
+        <p class="hero-sub">Obra nueva, reformas integrales y venta de propiedades exclusivas en Ibiza. Proyectos llave en mano con los mejores profesionales de la isla.</p>
+        <div class="hero-btns"><a href="#proyectos" class="btn btn-primary"><i class="ri-gallery-line"></i> Ver proyectos</a><a href="#contacto" class="btn btn-outline"><i class="ri-mail-line"></i> Solicitar presupuesto</a></div>
+        <div class="hero-stats">
+            <div><div class="hero-stat-num">120+</div><div class="hero-stat-label">Proyectos entregados</div></div>
+            <div><div class="hero-stat-num">98%</div><div class="hero-stat-label">Clientes satisfechos</div></div>
+            <div><div class="hero-stat-num">15</div><div class="hero-stat-label">Años de experiencia</div></div>
+        </div>
+    </div>
+</section>
+
+<section class="projects" id="proyectos">
+    <div class="container">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">Proyectos destacados</h2>
+        <div class="proj-grid">
+            <div class="proj-card"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop')"><span class="proj-badge">Obra nueva</span></div><div class="proj-body"><h4>Villa Can Furnet</h4><p>Villa de lujo con piscina infinity y vistas al mar. Arquitectura contemporánea mediterránea.</p><div class="proj-specs"><span><i class="ri-ruler-line"></i> 450 m²</span><span><i class="ri-home-4-line"></i> 5 hab</span><span><i class="ri-calendar-line"></i> 2025</span></div></div></div>
+            <div class="proj-card"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop')"><span class="proj-badge">Reforma</span></div><div class="proj-body"><h4>Finca Santa Gertrudis</h4><p>Reforma integral de finca payesa manteniendo la esencia original con acabados premium.</p><div class="proj-specs"><span><i class="ri-ruler-line"></i> 320 m²</span><span><i class="ri-home-4-line"></i> 4 hab</span><span><i class="ri-calendar-line"></i> 2024</span></div></div></div>
+            <div class="proj-card"><div class="proj-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop')"><span class="proj-badge">Obra nueva</span></div><div class="proj-body"><h4>Apartamentos Marina Botafoch</h4><p>Complejo residencial premium con acabados de alta gama, spa y parking subterráneo.</p><div class="proj-specs"><span><i class="ri-ruler-line"></i> 80-150 m²</span><span><i class="ri-home-4-line"></i> 2-3 hab</span><span><i class="ri-calendar-line"></i> 2026</span></div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="properties" id="inmuebles">
+    <div class="container">
+        <p class="section-label">Inmuebles</p>
+        <h2 class="section-title">Propiedades en venta</h2>
+        <div class="prop-grid">
+            <div class="prop-card"><div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&h=350&fit=crop')"><span class="prop-tag">En venta</span></div><div class="prop-body"><h4>Villa moderna Jesús</h4><p class="prop-loc"><i class="ri-map-pin-line"></i> Jesús, Ibiza</p><div class="prop-details"><span><i class="ri-home-4-line"></i> 4 hab</span><span><i class="ri-drop-line"></i> 3 baños</span><span><i class="ri-ruler-line"></i> 280 m²</span></div><div class="prop-price">1.250.000€</div></div></div>
+            <div class="prop-card"><div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&h=350&fit=crop')"><span class="prop-tag">Reservado</span></div><div class="prop-body"><h4>Ático Paseo Marítimo</h4><p class="prop-loc"><i class="ri-map-pin-line"></i> Puerto de Ibiza</p><div class="prop-details"><span><i class="ri-home-4-line"></i> 3 hab</span><span><i class="ri-drop-line"></i> 2 baños</span><span><i class="ri-ruler-line"></i> 140 m²</span></div><div class="prop-price">890.000€</div></div></div>
+            <div class="prop-card"><div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=500&h=350&fit=crop')"><span class="prop-tag">En venta</span></div><div class="prop-body"><h4>Finca rústica San Carlos</h4><p class="prop-loc"><i class="ri-map-pin-line"></i> San Carlos, Ibiza</p><div class="prop-details"><span><i class="ri-home-4-line"></i> 5 hab</span><span><i class="ri-drop-line"></i> 4 baños</span><span><i class="ri-ruler-line"></i> 400 m²</span></div><div class="prop-price">2.100.000€</div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="servicios">
+    <div class="container">
+        <p class="section-label">Servicios</p>
+        <h2 class="section-title">Lo que hacemos</h2>
+        <div class="serv-grid">
+            <div class="serv-card"><i class="ri-home-gear-line"></i><h4>Obra nueva</h4><p>Construcción completa desde cimentación hasta entrega de llaves</p></div>
+            <div class="serv-card"><i class="ri-tools-line"></i><h4>Reformas integrales</h4><p>Renovación total de viviendas, locales y edificios</p></div>
+            <div class="serv-card"><i class="ri-draft-line"></i><h4>Arquitectura</h4><p>Diseño arquitectónico y proyecto técnico completo</p></div>
+            <div class="serv-card"><i class="ri-key-2-line"></i><h4>Venta inmobiliaria</h4><p>Propiedades exclusivas en las mejores zonas de Ibiza</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contacto">
+    <div class="container">
+        <div class="contact-card">
+            <h3>Solicita presupuesto</h3>
+            <p>Cuéntanos tu proyecto y te hacemos una valoración sin compromiso.</p>
+            <div class="contact-form">
+                <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+                <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+                <div class="form-group"><label>Tipo de proyecto</label><select><option>Obra nueva</option><option>Reforma integral</option><option>Reforma parcial</option><option>Compra de inmueble</option></select></div>
+                <div class="form-group"><label>Presupuesto aprox.</label><select><option>Menos de 100.000€</option><option>100.000€ - 500.000€</option><option>500.000€ - 1M€</option><option>Más de 1M€</option></select></div>
+                <div class="form-group form-full"><label>Descripción</label><textarea rows="3" placeholder="Describe brevemente tu proyecto..."></textarea></div>
+                <div class="contact-submit"><button class="btn btn-primary"><i class="ri-send-plane-line"></i> Enviar solicitud</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-brand"><i class="ri-building-4-line"></i> Mediterránea Obras</p>
+    <p class="footer-copy">© 2026 Mediterránea Obras — Demo creada por DreamsDeveloper</p>
+</footer>
+
+<div class="demo-banner"><i class="ri-information-line"></i> Demo representativa del sector construcción — <a href="../../construccion.html">Volver al sector</a></div>
+
+</body>
+</html>
