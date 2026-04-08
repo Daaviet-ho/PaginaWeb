@@ -99,23 +99,45 @@
             </div>
         </section>
 
-        <!-- Testimonios -->
+        <!-- Reseñas -->
         <section class="testimonios" id="testimonios">
             <div class="container">
                 <h2 class="section-title">Lo que dicen mis clientes</h2>
-                <div class="testimonios-grid">
-                    <div class="testimonio-card">
-                        <p class="testimonio-texto">"Trabajar con DreamsDeveloper fue una experiencia excelente. Entendió exactamente lo que necesitábamos y lo entregó a tiempo."</p>
-                        <p class="testimonio-autor">— Cliente del sector turismo</p>
-                    </div>
-                    <div class="testimonio-card">
-                        <p class="testimonio-texto">"Nuestra app de pedidos transformó el negocio. Profesionalidad y comunicación impecable durante todo el proyecto."</p>
-                        <p class="testimonio-autor">— Cliente del sector restauración</p>
-                    </div>
-                    <div class="testimonio-card">
-                        <p class="testimonio-texto">"La tienda online que nos creó superó nuestras expectativas. Diseño moderno y funcionalidad perfecta."</p>
-                        <p class="testimonio-autor">— Cliente del sector retail</p>
-                    </div>
+
+                <!-- Formulario (solo visible si hay sesión) -->
+                <div id="resenaFormWrapper" class="resena-form-wrapper" style="display:none;">
+                    <form id="resenaForm" class="resena-form">
+                        <h3 class="resena-form-title"><i class="ri-quill-pen-line"></i> Deja tu reseña</h3>
+                        <div class="resena-form-rating" id="resenaStars">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="resenaPuntuacion" value="0">
+                        <textarea id="resenaTexto" class="resena-textarea" placeholder="Cuéntanos tu experiencia trabajando con DreamsDeveloper..." maxlength="500" minlength="10" required></textarea>
+                        <div class="resena-form-footer">
+                            <span class="resena-char-count"><span id="resenaCharCount">0</span>/500</span>
+                            <button type="submit" class="btn btn-primary btn-resena">Publicar reseña</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Mensaje para no logueados -->
+                <div id="resenaLoginPrompt" class="resena-login-prompt" style="display:none;">
+                    <p><i class="ri-lock-line"></i> <a href="login.html">Identifícate</a> o <a href="register.html">crea una cuenta</a> para dejar tu reseña.</p>
+                </div>
+
+                <!-- Grid de reseñas reales -->
+                <div class="testimonios-grid" id="resenasGrid">
+                    <div class="resenas-loading"><i class="ri-loader-4-line ri-spin"></i> Cargando reseñas...</div>
+                </div>
+
+                <!-- Sin reseñas -->
+                <div id="resenasEmpty" class="resenas-empty" style="display:none;">
+                    <i class="ri-chat-smile-3-line"></i>
+                    <p>Aún no hay reseñas. ¡Sé el primero en compartir tu experiencia!</p>
                 </div>
             </div>
         </section>
@@ -156,5 +178,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script type="module" src="js/resenas.js"></script>
 </body>
 </html>

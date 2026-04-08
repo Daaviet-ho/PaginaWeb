@@ -634,7 +634,204 @@ header {
     font-weight: 600;
 }
 
-/* ===== CTA ===== */
+/* Reseña Form */
+.resena-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.resena-form {
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border-top: 3px solid var(--color-accent);
+}
+
+.resena-form-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resena-form-title i {
+    color: var(--color-accent);
+}
+
+.resena-form-rating {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.resena-form-rating .star {
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: color 0.15s, transform 0.15s;
+    user-select: none;
+}
+
+.resena-form-rating .star:hover,
+.resena-form-rating .star.active {
+    color: #f9ca24;
+    transform: scale(1.15);
+}
+
+.resena-textarea {
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--color-bg-section);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 14px 16px;
+    resize: vertical;
+    transition: border-color var(--transition);
+}
+
+.resena-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.resena-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.resena-char-count {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.btn-resena {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+}
+
+/* Login prompt */
+.resena-login-prompt {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius);
+    border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.resena-login-prompt p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.resena-login-prompt a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Card enhancements for real reviews */
+.resena-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.resena-stars {
+    color: #f9ca24;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.resena-delete {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px;
+    opacity: 0.5;
+    transition: opacity var(--transition), color var(--transition);
+}
+
+.resena-delete:hover {
+    opacity: 1;
+    color: #e74c3c;
+}
+
+.resena-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.resena-fecha {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* Loading & empty states */
+.resenas-loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    grid-column: 1 / -1;
+}
+
+.resenas-loading i {
+    margin-right: 6px;
+}
+
+.resenas-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-muted);
+}
+
+.resenas-empty i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.3;
+}
+
+@media (max-width: 600px) {
+    .resena-form {
+        padding: 20px 16px;
+    }
+
+    .resena-form-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .resena-char-count {
+        text-align: right;
+    }
+
+    .resena-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}
 .cta {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--color-primary) 0%, #4834d4 100%);
