@@ -2,7 +2,7 @@
 const rotatingPhrases = [
     'De Hecho, Muy Facil',
     'De Hecho, Muy Barato',
-    'De Hecho, Con o Sin Contrato', 
+    'De Hecho, Con Servicios Documentados', 
     'De Hecho, Con Planes Incluidos',
     'De Hecho, Podremos Hacer Negocios Juntos'
 ];
